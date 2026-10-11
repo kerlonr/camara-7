@@ -80,10 +80,10 @@ Write-Host ("pck: {0:N1} MB  sha256 {1}" -f ((Get-Item "dist\Camara7.pck").Lengt
 
 # ---------------------------------------------------------------- git + release
 Step "Commit e release em $repo"
-git add -A
-git commit -m "Versão $Version`: $Notes" | Out-Null
-git tag -a "v$Version" -m "Câmara 7 v$Version"
-git push origin HEAD --follow-tags
+$null = git add -A 2>&1
+$null = git commit -m "Versão $Version`: $Notes" 2>&1
+$null = git tag -a "v$Version" -m "Câmara 7 v$Version" 2>&1
+$null = git push origin HEAD --follow-tags 2>&1
 if ($LASTEXITCODE -ne 0) { throw "git push falhou." }
 $body = "$Notes`n`n---`nQuem já tem o jogo instalado recebe esta versão sozinho ao abrir o jogo.`nPrimeira instalação: baixe o arquivo .msi do release mais recente que tiver um."
 gh release create "v$Version" @assets --repo $repo --title "Câmara 7 v$Version" --notes $body
