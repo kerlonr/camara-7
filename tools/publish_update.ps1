@@ -18,7 +18,7 @@ param(
 $ErrorActionPreference = "Continue"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
-$godot = "C:\Users\mitok\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe"
+$godot = if ($env:GODOT) { $env:GODOT } else { "$env:USERPROFILE\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe" }
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
 function Step($t) { Write-Host ""; Write-Host "== $t" -ForegroundColor Yellow }

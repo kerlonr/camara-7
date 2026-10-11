@@ -22,12 +22,12 @@ Se uma versão exigir um motor Godot novo, o jogo avisa e abre a página do inst
 
 ## Desenvolvimento
 
-- **Rodar do código:** `Jogar.bat` (Godot portátil em `C:\Users\mitok\Tools\Godot`) ou `Abrir no Editor.bat` + **F5**.
+- **Rodar do código:** `Jogar.bat` (Godot portátil em `%USERPROFILE%\Tools\Godot`) ou `Abrir no Editor.bat` + **F5**.
 - **Publicar uma atualização para os jogadores:** `Publicar Atualizacao.bat`. Ele sobe a versão, roda os
   testes, exporta o `.pck`, faz commit + tag e cria o release no GitHub (`tools/publish_update.ps1`;
   `-Installer` também gera e anexa o `.msi`, necessário só no primeiro release ou se o motor mudar).
 - **Gerar só os arquivos:** `Gerar EXE.bat` (`dist\Camara 7.exe` + `Camara 7.pck`) e `Gerar Instalador.bat`
-  (WiX Toolset 3 em `C:\Users\mitok\Tools\wix3`; ícone aplicado com o rcedit).
+  (WiX Toolset 3 em `%USERPROFILE%\Tools\wix3`; ícone aplicado com o rcedit).
 - **Arte e som:** `python tools/build_art.py` e `python tools/gen_audio.py` (tudo é gerado por código).
 
 ### Controles
