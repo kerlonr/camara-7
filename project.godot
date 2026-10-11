@@ -1,0 +1,70 @@
+; Engine configuration file.
+; Nome do jogo também em data/config/game.json ("title").
+
+config_version=5
+
+[application]
+
+config/name="Chernobyl Miner — Prototype"
+config/description="Mineração, sobrevivência à radiação e automação numa zona de exclusão fictícia."
+run/main_scene="res://scenes/ui/title_screen.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://assets/ui/icon_256.png"
+config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+EventBus="*res://autoload/event_bus.gd"
+DataManager="*res://autoload/data_manager.gd"
+Controls="*res://autoload/controls.gd"
+Settings="*res://autoload/settings.gd"
+GameState="*res://autoload/game_state.gd"
+TimeSystem="*res://autoload/time_system.gd"
+EconomySystem="*res://autoload/economy_system.gd"
+ProgressionSystem="*res://autoload/progression_system.gd"
+UpgradeSystem="*res://autoload/upgrade_system.gd"
+InventorySystem="*res://autoload/inventory_system.gd"
+HealthSystem="*res://autoload/health_system.gd"
+RadiationSystem="*res://autoload/radiation_system.gd"
+MachineSystem="*res://autoload/machine_system.gd"
+QuestSystem="*res://autoload/quest_system.gd"
+StorySystem="*res://autoload/story_system.gd"
+ContractSystem="*res://autoload/contract_system.gd"
+AudioSystem="*res://autoload/audio_system.gd"
+SaveSystem="*res://autoload/save_system.gd"
+SceneManager="*res://autoload/scene_manager.gd"
+UIManager="*res://autoload/ui_manager.gd"
+UpdateSystem="*res://autoload/update_system.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
+
+[gui]
+
+theme/default_font_antialiasing=0
+
+[input]
+
+; As ações são registradas em runtime a partir de data/config/controls.json (autoload Controls).
+
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="rocks"
+2d_physics/layer_4="interactables"
+2d_physics/layer_5="pickups"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.05, 0.05, 0.04, 1)

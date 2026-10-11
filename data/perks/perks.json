@@ -1,0 +1,24 @@
+{
+	"_comment": "Talentos (a cada nível, escolha 1 de 3). effects: add (soma ao atributo), mul (multiplica), set (liga flags). cost = desvantagem (estilo mutações do Darkwood / chems do Fallout). icon = índice no atlas assets/ui/perk_icons.png (16x16). Atributos em data/config/player.json.",
+	"entries": [
+		{ "id": "golpe_certeiro", "name": "Golpe Certeiro", "icon": 0, "desc": "+25% de dano com a ferramenta.", "effects": { "mul": { "tool_power": 1.25 } } },
+		{ "id": "pulmoes", "name": "Pulmões de Mineiro", "icon": 1, "desc": "Golpes gastam 25% menos energia.", "effects": { "mul": { "tool_energy_cost": 0.75 } } },
+		{ "id": "maos_rapidas", "name": "Mãos Rápidas", "icon": 2, "desc": "Golpeia 15% mais rápido.", "effects": { "mul": { "tool_cooldown": 0.85 } } },
+		{ "id": "olho_clinico", "name": "Olho Clínico", "icon": 3, "desc": "Veios ricos aparecem com o dobro da frequência.", "effects": { "mul": { "rich_mult": 2.0 } } },
+		{ "id": "bolso_fundo", "name": "Bolso Fundo", "icon": 4, "desc": "+9 espaços na mochila.", "effects": { "add": { "inventory_slots": 9 } } },
+		{ "id": "pele_grossa", "name": "Pele Grossa", "icon": 5, "desc": "-15% de radiação externa.", "effects": { "add": { "rad_protection": 0.15 } } },
+		{ "id": "faro_sucata", "name": "Faro de Sucateiro", "icon": 6, "desc": "Caixotes e armários sempre dão um item a mais.", "effects": { "add": { "crate_bonus": 1 } } },
+		{ "id": "barganha", "name": "Lábia", "icon": 7, "desc": "+12% no preço de venda. Abre falas novas com alguns NPCs.", "effects": { "add": { "sell_bonus": 0.12 } } },
+		{ "id": "passo_leve", "name": "Passo Leve", "icon": 8, "desc": "+12% de velocidade.", "effects": { "mul": { "move_speed": 1.12, "run_speed": 1.12 } } },
+		{ "id": "bateria", "name": "Eletricista", "icon": 9, "desc": "A bateria da lanterna dura 60% mais.", "effects": { "mul": { "battery_minutes": 1.6 } } },
+		{ "id": "corpo_fechado", "name": "Corpo Fechado", "icon": 10, "desc": "+30 de vida máxima.", "effects": { "add": { "max_hp": 30 } } },
+		{ "id": "ima", "name": "Mãos de Ímã", "icon": 11, "desc": "Raio de coleta 70% maior.", "effects": { "mul": { "pickup_radius": 1.7 } } },
+		{ "id": "geologo", "name": "Geólogo", "icon": 12, "desc": "Geodos três vezes mais comuns.", "effects": { "mul": { "geode_mult": 3.0 } } },
+		{ "id": "olhos_noite", "name": "Olhos da Noite", "icon": 13, "desc": "Lanterna 25% mais longa e mais larga.", "effects": { "mul": { "light_scale": 1.25 } } },
+		{ "id": "folego", "name": "Fôlego", "icon": 14, "desc": "+40 de energia máxima.", "effects": { "add": { "max_energy": 40 } } },
+		{ "id": "furia", "name": "Fúria", "icon": 15, "desc": "+50% de dano.", "cost": "Golpes gastam 40% mais energia.", "effects": { "mul": { "tool_power": 1.5, "tool_energy_cost": 1.4 } } },
+		{ "id": "corpo_quente", "name": "Corpo Quente", "icon": 16, "desc": "-35% de radiação externa.", "cost": "A exposição não baixa sozinha na base.", "effects": { "add": { "rad_protection": 0.35 }, "set": { "no_base_decay": 1 } } },
+		{ "id": "ganancia", "name": "Ganância", "icon": 17, "desc": "Veios ricos rendem o dobro.", "cost": "Se desmaiar, perde TODA a carga.", "effects": { "mul": { "rich_yield": 2.0 }, "set": { "passout_lose_all": 1 } } },
+		{ "id": "insone", "name": "Insone", "icon": 18, "desc": "+3 horas antes de desmaiar de cansaço.", "cost": "Dormir recupera menos exposição.", "effects": { "add": { "late_minutes": 180 }, "mul": { "sleep_rad_mult": 0.5 } } }
+	]
+}

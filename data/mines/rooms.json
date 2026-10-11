@@ -1,0 +1,711 @@
+{
+	"_comment": "Tipos de sala. shape: cave (autômato celular) | rect. props: [id, min, max, onde] (onde: wall = encostado na parede, floor = qualquer). @id = contêiner quebrável. density_mult multiplica rochas. ore_mult multiplica minérios. lamp_color opcional. floor_override troca o piso. min_depth limita onde a sala aparece.",
+	"entries": {
+		"cave": {
+			"name": "Galeria natural",
+			"shape": "cave",
+			"props": [
+				[
+					"rubble",
+					0,
+					2,
+					"floor"
+				],
+				[
+					"timber_support",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"puddle",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"drag_marks",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"stain_dark",
+					0,
+					1,
+					"floor"
+				]
+			],
+			"density_mult": 1.15
+		},
+		"timber": {
+			"name": "Câmara escorada",
+			"shape": "rect",
+			"props": [
+				[
+					"timber_support",
+					2,
+					4,
+					"wall"
+				],
+				[
+					"minecart",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"rubble",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"cable_spool",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"helmet_floor",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"lamp_broken",
+					0,
+					1,
+					"floor"
+				]
+			],
+			"density_mult": 1.0
+		},
+		"storage": {
+			"name": "Depósito",
+			"shape": "rect",
+			"props": [
+				[
+					"@crate",
+					3,
+					6,
+					"wall"
+				],
+				[
+					"barrel",
+					1,
+					3,
+					"wall"
+				],
+				[
+					"@locker",
+					0,
+					2,
+					"wall"
+				],
+				[
+					"barrel_rad",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"gas_cylinders",
+					0,
+					1,
+					"wall"
+				]
+			],
+			"density_mult": 0.5
+		},
+		"lockers": {
+			"name": "Vestiário do turno",
+			"shape": "rect",
+			"min_depth": 2,
+			"props": [
+				[
+					"@locker",
+					2,
+					4,
+					"wall"
+				],
+				[
+					"bench",
+					1,
+					2,
+					"floor"
+				],
+				[
+					"coat_hooks",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"boots",
+					0,
+					2,
+					"floor"
+				],
+				[
+					"calendar",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"poster",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"handprints",
+					0,
+					1,
+					"wall"
+				]
+			],
+			"density_mult": 0.3
+		},
+		"canteen": {
+			"name": "Refeitório",
+			"shape": "rect",
+			"min_depth": 3,
+			"props": [
+				[
+					"table",
+					1,
+					2,
+					"floor"
+				],
+				[
+					"samovar",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"radio_old",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"poster",
+					1,
+					1,
+					"wall"
+				],
+				[
+					"banner",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"clock",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"@crate",
+					0,
+					2,
+					"wall"
+				]
+			],
+			"density_mult": 0.3,
+			"lamp_color": "#ffd9a0",
+			"floor_override": "ind_floor"
+		},
+		"infirmary": {
+			"name": "Posto médico",
+			"shape": "rect",
+			"min_depth": 5,
+			"props": [
+				[
+					"hospital_bed",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"@medcab",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"gasmask",
+					1,
+					3,
+					"floor"
+				],
+				[
+					"poster_atom",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"documents",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"stain_dark",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"handprints",
+					0,
+					1,
+					"wall"
+				]
+			],
+			"density_mult": 0.25,
+			"lamp_color": "#e0f0e8",
+			"floor_override": "ind_floor"
+		},
+		"control": {
+			"name": "Posto de controle",
+			"shape": "rect",
+			"props": [
+				[
+					"desk",
+					1,
+					1,
+					"wall"
+				],
+				[
+					"file_cabinet",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"@locker",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"electric_box",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"calendar",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"clock",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"documents",
+					0,
+					2,
+					"floor"
+				],
+				[
+					"phone",
+					0,
+					1,
+					"wall"
+				]
+			],
+			"density_mult": 0.4,
+			"lamp_color": "#d8f0c8",
+			"floor_override": "ind_floor"
+		},
+		"lab": {
+			"name": "Laboratório do Instituto",
+			"shape": "rect",
+			"min_depth": 10,
+			"props": [
+				[
+					"terminal_mine",
+					1,
+					1,
+					"wall"
+				],
+				[
+					"lab_table",
+					1,
+					2,
+					"floor"
+				],
+				[
+					"barrel_rad",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"glass_cabinet",
+					0,
+					2,
+					"wall"
+				],
+				[
+					"sign_radiation",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"@safe",
+					0,
+					1,
+					"wall"
+				]
+			],
+			"density_mult": 0.3,
+			"lamp_color": "#cfe8ff",
+			"floor_override": "ind_floor_stripe"
+		},
+		"vent": {
+			"name": "Ventilação",
+			"shape": "rect",
+			"props": [
+				[
+					"fan",
+					1,
+					1,
+					"wall"
+				],
+				[
+					"pipes",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"electric_box",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"steam_vent",
+					0,
+					1,
+					"floor"
+				]
+			],
+			"density_mult": 0.8
+		},
+		"pump": {
+			"name": "Sala de bombas",
+			"shape": "rect",
+			"min_depth": 8,
+			"props": [
+				[
+					"pump",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"pipes",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"valve",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"steam_vent",
+					1,
+					2,
+					"floor"
+				],
+				[
+					"puddle",
+					1,
+					3,
+					"floor"
+				]
+			],
+			"density_mult": 0.4,
+			"wet": 0.3
+		},
+		"flooded": {
+			"name": "Galeria inundada",
+			"shape": "cave",
+			"props": [
+				[
+					"rubble",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"boots",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"lamp_broken",
+					0,
+					1,
+					"floor"
+				]
+			],
+			"density_mult": 0.7,
+			"wet": 0.45
+		},
+		"collapsed": {
+			"name": "Galeria desmoronada",
+			"shape": "cave",
+			"min_depth": 3,
+			"props": [
+				[
+					"rubble",
+					2,
+					4,
+					"floor"
+				],
+				[
+					"broken_timber",
+					1,
+					3,
+					"floor"
+				],
+				[
+					"helmet_floor",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"suit_torn",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"drag_marks",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"lamp_broken",
+					0,
+					1,
+					"floor"
+				]
+			],
+			"density_mult": 1.6
+		},
+		"shrine": {
+			"name": "Memorial improvisado",
+			"shape": "rect",
+			"min_depth": 6,
+			"props": [
+				[
+					"candles",
+					2,
+					4,
+					"floor"
+				],
+				[
+					"photos",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"chalk_marks",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"helmet_floor",
+					1,
+					2,
+					"floor"
+				],
+				[
+					"wall_writing",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"stain_dark",
+					0,
+					1,
+					"floor"
+				]
+			],
+			"density_mult": 0.2,
+			"lamp_color": "#ffb060"
+		},
+		"hot": {
+			"name": "Bolsão quente",
+			"shape": "cave",
+			"props": [
+				[
+					"barrel_rad",
+					1,
+					3,
+					"wall"
+				],
+				[
+					"puddle_rad",
+					2,
+					4,
+					"floor"
+				],
+				[
+					"sign_radiation",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"gasmask",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"fungus",
+					1,
+					3,
+					"floor"
+				],
+				[
+					"suit_torn",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"wall_writing",
+					0,
+					1,
+					"wall"
+				]
+			],
+			"density_mult": 1.0,
+			"ore_mult": {
+				"uranium": 3.0,
+				"graphite": 2.0,
+				"blue_vein": 2.0
+			},
+			"lamp_color": "#9cff7a"
+		},
+		"story": {
+			"name": "Sala esquecida",
+			"shape": "rect",
+			"props": [
+				[
+					"desk",
+					1,
+					1,
+					"wall"
+				],
+				[
+					"file_cabinet",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"calendar",
+					1,
+					1,
+					"wall"
+				],
+				[
+					"clock",
+					0,
+					1,
+					"wall"
+				],
+				[
+					"helmet_floor",
+					0,
+					1,
+					"floor"
+				],
+				[
+					"handprints",
+					0,
+					1,
+					"wall"
+				]
+			],
+			"density_mult": 0.15,
+			"lamp_color": "#ffcf8f",
+			"floor_override": "ind_floor",
+			"story": true
+		},
+		"vault": {
+			"name": "Antecâmara 7",
+			"shape": "rect",
+			"props": [
+				[
+					"sign_danger",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"barrel_rad",
+					0,
+					2,
+					"wall"
+				],
+				[
+					"candles",
+					0,
+					2,
+					"floor"
+				],
+				[
+					"handprints",
+					1,
+					2,
+					"wall"
+				],
+				[
+					"wall_writing",
+					1,
+					1,
+					"wall"
+				],
+				[
+					"drag_marks",
+					0,
+					1,
+					"floor"
+				]
+			],
+			"density_mult": 0.0,
+			"lamp_color": "#6fd6ff",
+			"floor_override": "ind_floor_stripe",
+			"story": true
+		}
+	}
+}

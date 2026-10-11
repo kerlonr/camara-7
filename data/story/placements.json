@@ -1,0 +1,12 @@
+{
+	"_comment": "Objetos de história colocados na mina. Aparecem na primeira descida em que a condição passa e o objeto ainda não foi achado (flag = id). Um por nível, em uma sala própria. kind: tape | item | final_door.",
+	"entries": [
+		{ "id": "tape_1", "kind": "tape", "min_depth": 4, "if": [] },
+		{ "id": "tape_2", "kind": "tape", "min_depth": 9, "if": ["tape_1"] },
+		{ "id": "tape_3", "kind": "tape", "min_depth": 14, "if": ["tape_2"] },
+		{ "id": "tape_4", "kind": "tape", "min_depth": 19, "if": ["tape_3"] },
+		{ "id": "tape_5", "kind": "tape", "min_depth": 24, "if": ["tape_4"] },
+		{ "id": "ivan_helmet", "kind": "item", "item": "ivan_helmet", "min_depth": 8, "max_depth": 14, "if": ["quest:q_ivan", "!has:ivan_helmet>=1"] },
+		{ "id": "chamber_opened", "kind": "final_door", "min_depth": 30, "if": [] }
+	]
+}

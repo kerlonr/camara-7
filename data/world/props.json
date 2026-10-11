@@ -1,0 +1,624 @@
+{
+	"_comment": "Props. collision = [largura, altura] nos pés. mount: wall = na face da parede. floor = deitado no chão. light: {color, energy, scale, offset, flicker, night_only}. radiation = força da fonte. fx: steam | fire | sparks | motes | smoke. loop = som posicional em loop. interact: {action, prompt} padrão. frames = quadros de animação (anim_fps).",
+	"entries": {
+		"trailer": {
+			"sprite": "res://assets/environment/props/trailer.png",
+			"collision": [
+				60,
+				12
+			],
+			"light": {
+				"color": "#ffb46a",
+				"energy": 0.55,
+				"scale": 0.45,
+				"offset": [
+					-21,
+					-14
+				],
+				"flicker": 0.05
+			}
+		},
+		"terminal": {
+			"sprite": "res://assets/environment/props/terminal.png",
+			"collision": [
+				16,
+				7
+			],
+			"light": {
+				"color": "#7fe08a",
+				"energy": 0.5,
+				"scale": 0.22,
+				"offset": [
+					0,
+					-22
+				],
+				"flicker": 0.15
+			}
+		},
+		"decon_shower": {
+			"sprite": "res://assets/environment/props/decon_shower.png",
+			"collision": [
+				20,
+				6
+			]
+		},
+		"mine_entrance": {
+			"sprite": "res://assets/environment/props/mine_entrance.png",
+			"collision": [
+				44,
+				12
+			],
+			"light": {
+				"color": "#ffd28a",
+				"energy": 0.7,
+				"scale": 0.45,
+				"offset": [
+					0,
+					-24
+				],
+				"flicker": 0.25
+			}
+		},
+		"lamp_post": {
+			"sprite": "res://assets/environment/props/lamp_post.png",
+			"collision": [
+				4,
+				3
+			],
+			"light": {
+				"color": "#ffcf8f",
+				"energy": 0.85,
+				"scale": 0.9,
+				"offset": [
+					6,
+					-36
+				],
+				"flicker": 0.2,
+				"night_only": true
+			}
+		},
+		"radio_table": {
+			"sprite": "res://assets/environment/props/radio_table.png",
+			"collision": [
+				18,
+				6
+			],
+			"interact": {
+				"action": "radio",
+				"prompt": "Rádio"
+			},
+			"light": {
+				"color": "#ffb060",
+				"energy": 0.35,
+				"scale": 0.15,
+				"offset": [
+					2,
+					-14
+				],
+				"flicker": 0.1
+			}
+		},
+		"fire_barrel": {
+			"sprite": "res://assets/environment/props/fire_barrel.png",
+			"collision": [
+				12,
+				6
+			],
+			"fx": "fire",
+			"loop": "fire",
+			"light": {
+				"color": "#ff9a40",
+				"energy": 1.0,
+				"scale": 0.75,
+				"offset": [
+					0,
+					-16
+				],
+				"flicker": 0.6
+			}
+		},
+		"bus_wreck": {
+			"sprite": "res://assets/environment/props/bus_wreck.png",
+			"collision": [
+				74,
+				12
+			]
+		},
+		"uaz": {
+			"sprite": "res://assets/environment/props/uaz.png",
+			"collision": [
+				40,
+				10
+			]
+		},
+		"teddy": {
+			"sprite": "res://assets/environment/props/teddy.png",
+			"floor": true
+		},
+		"doll": {
+			"sprite": "res://assets/environment/props/doll.png",
+			"floor": true
+		},
+		"tree_red": {
+			"sprite": "res://assets/environment/props/tree_red.png",
+			"collision": [
+				8,
+				5
+			]
+		},
+		"tree_pine": {
+			"sprite": "res://assets/environment/props/tree_pine.png",
+			"collision": [
+				8,
+				5
+			]
+		},
+		"tree_birch": {
+			"sprite": "res://assets/environment/props/tree_birch.png",
+			"collision": [
+				6,
+				4
+			]
+		},
+		"bush": {
+			"sprite": "res://assets/environment/props/bush.png"
+		},
+		"sign_radiation": {
+			"sprite": "res://assets/environment/props/sign_radiation.png",
+			"collision": [
+				4,
+				3
+			]
+		},
+		"sign_danger": {
+			"sprite": "res://assets/environment/props/sign_danger.png",
+			"collision": [
+				4,
+				3
+			]
+		},
+		"barrel": {
+			"sprite": "res://assets/environment/props/barrel.png",
+			"collision": [
+				12,
+				6
+			]
+		},
+		"barrel_rad": {
+			"sprite": "res://assets/environment/props/barrel_rad.png",
+			"collision": [
+				12,
+				6
+			],
+			"radiation": 0.3,
+			"fx": "motes",
+			"light": {
+				"color": "#8fe854",
+				"energy": 0.45,
+				"scale": 0.25,
+				"offset": [
+					0,
+					-4
+				],
+				"flicker": 0.1
+			}
+		},
+		"puddle_rad": {
+			"sprite": "res://assets/environment/props/puddle_rad.png",
+			"floor": true,
+			"radiation": 0.15,
+			"fx": "motes",
+			"light": {
+				"color": "#8fe854",
+				"energy": 0.5,
+				"scale": 0.3,
+				"offset": [
+					0,
+					-7
+				],
+				"flicker": 0.1
+			}
+		},
+		"puddle": {
+			"sprite": "res://assets/environment/props/puddle.png",
+			"floor": true
+		},
+		"lamp": {
+			"sprite": "res://assets/environment/props/lamp.png",
+			"mount": "wall",
+			"lamp": true,
+			"light": {
+				"color": "#ffcf8f",
+				"energy": 0.95,
+				"scale": 0.85,
+				"offset": [
+					0,
+					-10
+				],
+				"flicker": 0.15
+			}
+		},
+		"lamp_red": {
+			"sprite": "res://assets/environment/props/lamp_red.png",
+			"mount": "wall",
+			"lamp": true,
+			"light": {
+				"color": "#ff4a3a",
+				"energy": 0.9,
+				"scale": 0.7,
+				"offset": [
+					0,
+					-10
+				],
+				"flicker": 0.4
+			}
+		},
+		"timber_support": {
+			"sprite": "res://assets/environment/props/timber_support.png",
+			"collision": [
+				14,
+				3
+			]
+		},
+		"broken_timber": {
+			"sprite": "res://assets/environment/props/broken_timber.png",
+			"floor": true
+		},
+		"fan": {
+			"sprite": "res://assets/environment/props/fan.png",
+			"mount": "wall"
+		},
+		"pipes": {
+			"sprite": "res://assets/environment/props/pipes.png",
+			"mount": "wall"
+		},
+		"valve": {
+			"sprite": "res://assets/environment/props/valve.png",
+			"mount": "wall"
+		},
+		"pump": {
+			"sprite": "res://assets/environment/props/pump.png",
+			"collision": [
+				24,
+				8
+			],
+			"loop": "pump_hum"
+		},
+		"steam_vent": {
+			"sprite": "res://assets/environment/props/steam_vent.png",
+			"floor": true,
+			"fx": "steam",
+			"loop": "steam"
+		},
+		"electric_box": {
+			"sprite": "res://assets/environment/props/electric_box.png",
+			"mount": "wall",
+			"fx": "sparks"
+		},
+		"poster": {
+			"sprite": "res://assets/environment/props/poster.png",
+			"mount": "wall"
+		},
+		"poster_atom": {
+			"sprite": "res://assets/environment/props/poster_atom.png",
+			"mount": "wall"
+		},
+		"banner": {
+			"sprite": "res://assets/environment/props/banner.png",
+			"mount": "wall"
+		},
+		"calendar": {
+			"sprite": "res://assets/environment/props/calendar.png",
+			"mount": "wall"
+		},
+		"clock": {
+			"sprite": "res://assets/environment/props/clock.png",
+			"mount": "wall"
+		},
+		"phone": {
+			"sprite": "res://assets/environment/props/phone.png",
+			"mount": "wall"
+		},
+		"coat_hooks": {
+			"sprite": "res://assets/environment/props/coat_hooks.png",
+			"mount": "wall"
+		},
+		"photos": {
+			"sprite": "res://assets/environment/props/photos.png",
+			"mount": "wall"
+		},
+		"chalk_marks": {
+			"sprite": "res://assets/environment/props/chalk_marks.png",
+			"mount": "wall"
+		},
+		"radio_old": {
+			"sprite": "res://assets/environment/props/radio_old.png",
+			"mount": "wall"
+		},
+		"samovar": {
+			"sprite": "res://assets/environment/props/samovar.png",
+			"collision": [
+				10,
+				5
+			]
+		},
+		"desk": {
+			"sprite": "res://assets/environment/props/desk.png",
+			"collision": [
+				30,
+				6
+			]
+		},
+		"table": {
+			"sprite": "res://assets/environment/props/table.png",
+			"collision": [
+				30,
+				6
+			]
+		},
+		"bench": {
+			"sprite": "res://assets/environment/props/bench.png",
+			"collision": [
+				28,
+				4
+			]
+		},
+		"hospital_bed": {
+			"sprite": "res://assets/environment/props/hospital_bed.png",
+			"collision": [
+				16,
+				8
+			]
+		},
+		"lab_table": {
+			"sprite": "res://assets/environment/props/lab_table.png",
+			"collision": [
+				30,
+				6
+			]
+		},
+		"glass_cabinet": {
+			"sprite": "res://assets/environment/props/glass_cabinet.png",
+			"collision": [
+				14,
+				5
+			]
+		},
+		"terminal_mine": {
+			"sprite": "res://assets/environment/props/terminal_mine.png",
+			"collision": [
+				16,
+				6
+			],
+			"interact": {
+				"action": "terminal",
+				"prompt": "Terminal ЭВМ-7"
+			},
+			"light": {
+				"color": "#7fe08a",
+				"energy": 0.55,
+				"scale": 0.25,
+				"offset": [
+					0,
+					-20
+				],
+				"flicker": 0.3
+			}
+		},
+		"file_cabinet": {
+			"sprite": "res://assets/environment/props/file_cabinet.png",
+			"collision": [
+				12,
+				5
+			]
+		},
+		"minecart": {
+			"sprite": "res://assets/environment/props/minecart.png",
+			"collision": [
+				14,
+				6
+			]
+		},
+		"rubble": {
+			"sprite": "res://assets/environment/props/rubble.png",
+			"floor": true
+		},
+		"tire": {
+			"sprite": "res://assets/environment/props/tire.png",
+			"floor": true
+		},
+		"gasmask": {
+			"sprite": "res://assets/environment/props/gasmask.png",
+			"floor": true
+		},
+		"helmet_floor": {
+			"sprite": "res://assets/environment/props/helmet_floor.png",
+			"floor": true
+		},
+		"boots": {
+			"sprite": "res://assets/environment/props/boots.png",
+			"floor": true
+		},
+		"documents": {
+			"sprite": "res://assets/environment/props/documents.png",
+			"floor": true
+		},
+		"candles": {
+			"sprite": "res://assets/environment/props/candles.png",
+			"floor": true,
+			"frames": 2,
+			"anim_fps": 5,
+			"light": {
+				"color": "#ffb050",
+				"energy": 0.7,
+				"scale": 0.35,
+				"offset": [
+					0,
+					-6
+				],
+				"flicker": 0.7
+			}
+		},
+		"fungus": {
+			"sprite": "res://assets/environment/props/fungus.png",
+			"floor": true,
+			"light": {
+				"color": "#6fe0d0",
+				"energy": 0.45,
+				"scale": 0.22,
+				"offset": [
+					0,
+					-5
+				],
+				"flicker": 0.05
+			}
+		},
+		"gas_cylinders": {
+			"sprite": "res://assets/environment/props/gas_cylinders.png",
+			"collision": [
+				12,
+				5
+			]
+		},
+		"cable_spool": {
+			"sprite": "res://assets/environment/props/cable_spool.png",
+			"collision": [
+				12,
+				5
+			]
+		},
+		"power_pole": {
+			"sprite": "res://assets/environment/props/power_pole.png",
+			"collision": [
+				4,
+				3
+			]
+		},
+		"car_wreck": {
+			"sprite": "res://assets/environment/props/car_wreck.png",
+			"collision": [
+				42,
+				9
+			]
+		},
+		"concrete_blocks": {
+			"sprite": "res://assets/environment/props/concrete_blocks.png",
+			"collision": [
+				14,
+				6
+			]
+		},
+		"tape_recorder": {
+			"sprite": "res://assets/environment/props/tape_recorder.png",
+			"collision": [
+				14,
+				5
+			],
+			"loop": "tape_hiss",
+			"light": {
+				"color": "#ff6040",
+				"energy": 0.4,
+				"scale": 0.12,
+				"offset": [
+					4,
+					-8
+				],
+				"flicker": 0.5
+			}
+		},
+		"door_7": {
+			"sprite": "res://assets/environment/props/door_7.png",
+			"mount": "wall",
+			"light": {
+				"color": "#6fd6ff",
+				"energy": 0.8,
+				"scale": 0.6,
+				"offset": [
+					0,
+					-16
+				],
+				"flicker": 0.3
+			}
+		},
+		"ladder_down": {
+			"sprite": "res://assets/environment/props/ladder_down.png",
+			"floor": true
+		},
+		"ladder_up": {
+			"sprite": "res://assets/environment/props/ladder_up.png",
+			"mount": "wall",
+			"light": {
+				"color": "#cfd8c0",
+				"energy": 0.5,
+				"scale": 0.5,
+				"offset": [
+					0,
+					-16
+				],
+				"flicker": 0.0
+			}
+		},
+		"elevator": {
+			"sprite": "res://assets/environment/props/elevator.png",
+			"collision": [
+				28,
+				6
+			],
+			"light": {
+				"color": "#9fd18a",
+				"energy": 0.5,
+				"scale": 0.4,
+				"offset": [
+					10,
+					-14
+				],
+				"flicker": 0.1
+			}
+		},
+		"pad": {
+			"sprite": "res://assets/environment/props/pad.png",
+			"floor": true
+		},
+		"workbench": {
+			"sprite": "res://assets/environment/props/workbench.png",
+			"collision": [
+				30,
+				6
+			],
+			"light": {
+				"color": "#ffd9a0",
+				"energy": 0.45,
+				"scale": 0.3,
+				"offset": [
+					8,
+					-18
+				],
+				"flicker": 0.1
+			}
+		},
+		"drag_marks": {
+			"sprite": "res://assets/environment/props/drag_marks.png",
+			"floor": true
+		},
+		"stain_dark": {
+			"sprite": "res://assets/environment/props/stain_dark.png",
+			"floor": true
+		},
+		"suit_torn": {
+			"sprite": "res://assets/environment/props/suit_torn.png",
+			"floor": true
+		},
+		"lamp_broken": {
+			"sprite": "res://assets/environment/props/lamp_broken.png",
+			"floor": true
+		},
+		"handprints": {
+			"sprite": "res://assets/environment/props/handprints.png",
+			"mount": "wall"
+		},
+		"wall_writing": {
+			"sprite": "res://assets/environment/props/wall_writing.png",
+			"mount": "wall"
+		}
+	}
+}

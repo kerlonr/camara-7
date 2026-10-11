@@ -1,0 +1,460 @@
+{
+	"_comment": "Rochas mineráveis. hp = golpes x poder (varia ±20% por rocha). min_tier = nível mínimo da ferramenta. radiation = força da fonte. spawn_weight relativo (cada descida sorteia multiplicadores). max_depth -1 = sem limite. rich_chance = chance de veio rico (brilha, rende mais). loot = rocha que dropa vários itens (geodo).",
+	"entries": [
+		{
+			"id": "stone",
+			"name": "Rocha",
+			"drop": "stone",
+			"drop_min": 1,
+			"drop_max": 1,
+			"hp": 2,
+			"min_tier": 1,
+			"min_depth": 1,
+			"max_depth": -1,
+			"spawn_weight": 100,
+			"vein": [
+				1,
+				1
+			],
+			"sprites": [
+				"res://assets/environment/rocks/stone_1.png",
+				"res://assets/environment/rocks/stone_2.png",
+				"res://assets/environment/rocks/stone_3.png"
+			],
+			"particle_color": "#6a625a",
+			"filler": true,
+			"extra": [
+				{
+					"item": "coal",
+					"chance": 0.03
+				}
+			],
+			"xp": 1
+		},
+		{
+			"id": "stone_dense",
+			"name": "Rocha compacta",
+			"drop": "stone",
+			"drop_min": 2,
+			"drop_max": 3,
+			"hp": 6,
+			"min_tier": 2,
+			"min_depth": 10,
+			"max_depth": -1,
+			"spawn_weight": 70,
+			"vein": [
+				1,
+				1
+			],
+			"sprites": [
+				"res://assets/environment/rocks/stone_dense.png",
+				"res://assets/environment/rocks/stone_dense_2.png"
+			],
+			"particle_color": "#463f3a",
+			"filler": true,
+			"xp": 2
+		},
+		{
+			"id": "coal",
+			"name": "Veio de carvão",
+			"drop": "coal",
+			"drop_min": 1,
+			"drop_max": 2,
+			"hp": 3,
+			"min_tier": 1,
+			"min_depth": 1,
+			"max_depth": 30,
+			"spawn_weight": 22,
+			"vein": [
+				2,
+				6
+			],
+			"rich_chance": 0.06,
+			"sprites": [
+				"res://assets/environment/rocks/coal.png"
+			],
+			"particle_color": "#1d1d20",
+			"xp": 2
+		},
+		{
+			"id": "copper",
+			"name": "Veio de cobre",
+			"drop": "copper_ore",
+			"drop_min": 1,
+			"drop_max": 2,
+			"hp": 3,
+			"min_tier": 1,
+			"min_depth": 1,
+			"max_depth": 35,
+			"spawn_weight": 16,
+			"vein": [
+				2,
+				5
+			],
+			"rich_chance": 0.06,
+			"sprites": [
+				"res://assets/environment/rocks/copper.png"
+			],
+			"particle_color": "#c27a44",
+			"metal": true,
+			"xp": 3
+		},
+		{
+			"id": "iron",
+			"name": "Veio de ferro",
+			"drop": "iron_ore",
+			"drop_min": 1,
+			"drop_max": 2,
+			"hp": 4,
+			"min_tier": 1,
+			"min_depth": 3,
+			"max_depth": -1,
+			"spawn_weight": 14,
+			"vein": [
+				2,
+				5
+			],
+			"rich_chance": 0.06,
+			"sprites": [
+				"res://assets/environment/rocks/iron.png"
+			],
+			"particle_color": "#8a4b2a",
+			"metal": true,
+			"xp": 3
+		},
+		{
+			"id": "scrap",
+			"name": "Pilha de sucata",
+			"drop": "scrap",
+			"drop_min": 1,
+			"drop_max": 2,
+			"hp": 3,
+			"min_tier": 1,
+			"min_depth": 1,
+			"max_depth": -1,
+			"spawn_weight": 9,
+			"vein": [
+				1,
+				2
+			],
+			"sprites": [
+				"res://assets/environment/rocks/scrap.png",
+				"res://assets/environment/rocks/scrap_2.png"
+			],
+			"particle_color": "#85492a",
+			"metal": true,
+			"extra": [
+				{
+					"item": "mech_parts",
+					"chance": 0.12
+				},
+				{
+					"item": "elec_components",
+					"chance": 0.05
+				}
+			],
+			"xp": 2
+		},
+		{
+			"id": "lead",
+			"name": "Veio de chumbo",
+			"drop": "lead_ore",
+			"drop_min": 1,
+			"drop_max": 2,
+			"hp": 7,
+			"min_tier": 2,
+			"min_depth": 6,
+			"max_depth": -1,
+			"spawn_weight": 8,
+			"vein": [
+				2,
+				4
+			],
+			"rich_chance": 0.05,
+			"sprites": [
+				"res://assets/environment/rocks/lead.png"
+			],
+			"particle_color": "#8a909b",
+			"metal": true,
+			"xp": 6
+		},
+		{
+			"id": "geode",
+			"name": "Geodo",
+			"hp": 5,
+			"min_tier": 1,
+			"min_depth": 5,
+			"max_depth": -1,
+			"spawn_weight": 1.2,
+			"vein": [
+				1,
+				1
+			],
+			"sprites": [
+				"res://assets/environment/rocks/geode.png"
+			],
+			"particle_color": "#b9a6d6",
+			"glow": "#9f8fd0",
+			"loot_rolls": [
+				3,
+				5
+			],
+			"loot": [
+				{
+					"item": "copper_ore",
+					"weight": 30
+				},
+				{
+					"item": "iron_ore",
+					"weight": 30
+				},
+				{
+					"item": "lead_ore",
+					"weight": 18,
+					"min_depth": 6
+				},
+				{
+					"item": "uranium_ore",
+					"weight": 8,
+					"min_depth": 12
+				},
+				{
+					"item": "soviet_components",
+					"weight": 2
+				}
+			],
+			"xp": 10
+		},
+		{
+			"id": "uranium",
+			"name": "Veio de urânio",
+			"drop": "uranium_ore",
+			"drop_min": 1,
+			"drop_max": 2,
+			"hp": 12,
+			"min_tier": 3,
+			"min_depth": 12,
+			"max_depth": -1,
+			"spawn_weight": 4,
+			"vein": [
+				1,
+				3
+			],
+			"rich_chance": 0.05,
+			"radiation": 0.22,
+			"glow": "#8fe854",
+			"sprites": [
+				"res://assets/environment/rocks/uranium.png"
+			],
+			"particle_color": "#8fe854",
+			"xp": 12
+		},
+		{
+			"id": "graphite",
+			"name": "Bloco de grafite",
+			"drop": "graphite",
+			"drop_min": 1,
+			"drop_max": 1,
+			"hp": 10,
+			"min_tier": 3,
+			"min_depth": 20,
+			"max_depth": -1,
+			"spawn_weight": 3,
+			"vein": [
+				1,
+				2
+			],
+			"radiation": 0.3,
+			"glow": "#55b830",
+			"sprites": [
+				"res://assets/environment/rocks/graphite.png"
+			],
+			"particle_color": "#2b2b2e",
+			"xp": 15
+		},
+		{
+			"id": "blue_vein",
+			"name": "Veia azul",
+			"drop": "blue_crystal",
+			"drop_min": 1,
+			"drop_max": 2,
+			"hp": 16,
+			"min_tier": 4,
+			"min_depth": 25,
+			"max_depth": -1,
+			"spawn_weight": 1.5,
+			"vein": [
+				1,
+				3
+			],
+			"radiation": 0.18,
+			"glow": "#6fd6ff",
+			"sprites": [
+				"res://assets/environment/rocks/blue_vein.png"
+			],
+			"particle_color": "#6fd6ff",
+			"xp": 30
+		}
+	],
+	"containers": [
+		{
+			"id": "crate",
+			"name": "Caixote",
+			"hp": 2,
+			"min_tier": 1,
+			"sprite": "res://assets/environment/rocks/crate.png",
+			"particle_color": "#6e5134",
+			"sound": "wood_break",
+			"loot": [
+				{
+					"item": "",
+					"weight": 25
+				},
+				{
+					"item": "scrap",
+					"weight": 30,
+					"min": 1,
+					"max": 3
+				},
+				{
+					"item": "mech_parts",
+					"weight": 18,
+					"min": 1,
+					"max": 2
+				},
+				{
+					"item": "elec_components",
+					"weight": 10
+				},
+				{
+					"item": "canned_food",
+					"weight": 14
+				},
+				{
+					"item": "samogon",
+					"weight": 6
+				},
+				{
+					"item": "@note",
+					"weight": 7
+				}
+			],
+			"xp": 3
+		},
+		{
+			"id": "locker",
+			"name": "Armário",
+			"hp": 4,
+			"min_tier": 1,
+			"sprite": "res://assets/environment/rocks/locker.png",
+			"particle_color": "#575c38",
+			"sound": "hit_metal",
+			"loot": [
+				{
+					"item": "",
+					"weight": 12
+				},
+				{
+					"item": "elec_components",
+					"weight": 22,
+					"min": 1,
+					"max": 2
+				},
+				{
+					"item": "mech_parts",
+					"weight": 18,
+					"min": 1,
+					"max": 2
+				},
+				{
+					"item": "medkit",
+					"weight": 10
+				},
+				{
+					"item": "potassium_iodide",
+					"weight": 10
+				},
+				{
+					"item": "decon_solution",
+					"weight": 8
+				},
+				{
+					"item": "soviet_components",
+					"weight": 4,
+					"min_depth": 12
+				},
+				{
+					"item": "@note",
+					"weight": 16
+				}
+			],
+			"xp": 3
+		},
+		{
+			"id": "medcab",
+			"name": "Armário médico",
+			"hp": 3,
+			"min_tier": 1,
+			"sprite": "res://assets/environment/rocks/medcab.png",
+			"particle_color": "#c9c3ad",
+			"sound": "hit_metal",
+			"loot": [
+				{
+					"item": "medkit",
+					"weight": 30
+				},
+				{
+					"item": "potassium_iodide",
+					"weight": 30,
+					"min": 1,
+					"max": 2
+				},
+				{
+					"item": "decon_solution",
+					"weight": 20
+				},
+				{
+					"item": "@note",
+					"weight": 10
+				},
+				{
+					"item": "",
+					"weight": 10
+				}
+			],
+			"xp": 3
+		},
+		{
+			"id": "safe",
+			"name": "Cofre",
+			"hp": 14,
+			"min_tier": 2,
+			"sprite": "res://assets/environment/rocks/safe.png",
+			"particle_color": "#4a5040",
+			"sound": "hit_metal",
+			"loot": [
+				{
+					"item": "soviet_components",
+					"weight": 30
+				},
+				{
+					"item": "elec_components",
+					"weight": 25,
+					"min": 2,
+					"max": 4
+				},
+				{
+					"item": "uranium_ore",
+					"weight": 10,
+					"min": 1,
+					"max": 3
+				},
+				{
+					"item": "@note",
+					"weight": 35
+				}
+			],
+			"xp": 15
+		}
+	]
+}

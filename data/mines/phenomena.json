@@ -1,0 +1,17 @@
+{
+	"_comment": "Fenômenos estranhos na mina (sem monstros: o ambiente é o inimigo). Intervalo entre eventos diminui com a profundidade. caption = legenda de som (acessibilidade).",
+	"interval": [55, 120],
+	"interval_min_deep": [30, 70],
+	"entries": [
+		{ "id": "footsteps", "min_depth": 2, "weight": 4, "caption": "[passos atrás de você]" },
+		{ "id": "lights", "min_depth": 1, "weight": 3, "caption": "[as lâmpadas falham]" },
+		{ "id": "tremor", "min_depth": 3, "weight": 3, "caption": "[a rocha treme]" },
+		{ "id": "knock", "min_depth": 4, "weight": 3, "caption": "[três batidas dentro da rocha]" },
+		{ "id": "shadow", "min_depth": 5, "weight": 3, "caption": "[algo se move fora da luz]" },
+		{ "id": "whisper", "min_depth": 6, "weight": 3, "caption": "[sussurros]" },
+		{ "id": "silence", "min_depth": 7, "weight": 2, "caption": "[silêncio absoluto]" },
+		{ "id": "radio", "min_depth": 9, "weight": 2, "caption": "[rádio: '...Turno C... alguém...']" },
+		{ "id": "geiger_ghost", "min_depth": 11, "weight": 2, "caption": "[o Geiger dispara sem fonte]" },
+		{ "id": "name_call", "min_depth": 16, "weight": 1, "caption": "[alguém chama você pelo nome]" }
+	]
+}

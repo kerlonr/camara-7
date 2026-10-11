@@ -1,0 +1,63 @@
+{
+	"_comment": "Atributos base do jogador. Upgrades modificam estes valores (set = substitui, add = soma).",
+	"base_stats": {
+		"move_speed": 62.0,
+		"run_speed": 96.0,
+		"max_hp": 100.0,
+		"max_energy": 150.0,
+		"inventory_slots": 18,
+		"rad_protection": 0.0,
+		"carried_shield": 0.0,
+		"light_scale": 1.0,
+		"light_energy": 1.0,
+		"light_color": "#ffc98a",
+		"tool_power": 1.0,
+		"tool_tier": 1,
+		"tool_cooldown": 0.5,
+		"tool_energy_cost": 1.0,
+		"tool_mode": "swing",
+		"tool_sprite": "res://assets/items/tools/pickaxe_1.png",
+		"tool_reach": 22.0,
+		"pickup_radius": 30.0,
+		"suit": 1,
+		"sell_bonus": 0.0,
+		"dosimeter": 0,
+		"elevator": 0,
+		"machine_generator": 0,
+		"machine_drill": 0,
+		"battery_minutes": 900.0,
+		"rich_mult": 1.0,
+		"rich_yield": 1.0,
+		"geode_mult": 1.0,
+		"crate_bonus": 0,
+		"no_base_decay": 0,
+		"passout_lose_all": 0,
+		"late_minutes": 0,
+		"sleep_rad_mult": 1.0,
+		"stealth": 1.0,
+		"xp_mult": 1.0,
+		"damage_taken_mult": 1.0
+	},
+	"vitals": {
+		"hp_regen_base_per_min": 0.0,
+		"energy_exhausted_damage_mult": 0.5,
+		"exposure_energy_penalty_at": 50.0,
+		"exposure_energy_penalty": 0.3,
+		"exposure_damage_at": 75.0,
+		"exposure_damage_per_sec": 0.6,
+		"exposure_decay_base_per_sec": 0.08,
+		"sleep_exposure_reduction": 35.0
+	},
+	"sprites": {
+		"frame_size": [
+			16,
+			32
+		],
+		"suits": {
+			"1": "res://assets/characters/player/suit_1.png",
+			"2": "res://assets/characters/player/suit_2.png",
+			"3": "res://assets/characters/player/suit_3.png",
+			"4": "res://assets/characters/player/suit_4.png"
+		}
+	}
+}

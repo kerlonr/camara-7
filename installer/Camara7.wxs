@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Instalador do Câmara 7 (WiX Toolset 3). Gerado por installer/build_msi.ps1.
+  Instala POR USUÁRIO em %LOCALAPPDATA%\Programs\Camara 7 (não pede administrador) para que o jogo
+  consiga trocar o próprio "Camara 7.pck" quando baixa uma atualização.
+  UpgradeCode fixo: instaladores novos substituem o antigo. Saves (%APPDATA%\Godot\app_userdata\...) não são apagados.
+-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*"
+           Name="Câmara 7"
+           Language="1046"
+           Codepage="1252"
+           Version="$(var.Version)"
+           Manufacturer="Kerlon Ribeiro"
+           UpgradeCode="62cdaad9-04af-4d6e-ac5e-a27a62795924">
+
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perUser" InstallPrivileges="limited" Platform="x64"
+             Description="Câmara 7 $(var.Version)" Comments="Mineração e horror na Zona de Exclusão, 1986 (ficção)." />
+
+    <MajorUpgrade DowngradeErrorMessage="Uma versão mais nova do Câmara 7 já está instalada." AllowSameVersionUpgrades="yes" />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+    <Icon Id="GameIcon" SourceFile="$(var.IconPath)" />
+    <Property Id="ARPPRODUCTICON" Value="GameIcon" />
+    <Property Id="ARPURLINFOABOUT" Value="https://github.com/kerlonr/camara-7" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="UserProgramsFolder" Name="Programs">
+          <Directory Id="INSTALLFOLDER" Name="Camara 7" />
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="GameMenuFolder" Name="Câmara 7" />
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop" />
+    </Directory>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="GameFiles" Guid="d1dd4fd9-3076-4c5d-b51e-96569e527e91" Win64="yes">
+        <File Id="GameExeFile" Name="Camara 7.exe" Source="$(var.ExePath)" />
+        <File Id="GamePckFile" Name="Camara 7.pck" Source="$(var.PckPath)" />
+        <File Id="ReadmeTxt" Name="LEIA-ME.txt" Source="$(var.ReadmePath)" />
+        <RemoveFile Id="RemoveUpdateLeftovers" Name="Camara 7.pck.*" On="uninstall" />
+        <RemoveFolder Id="RemoveInstallFolder" On="uninstall" />
+        <RemoveFolder Id="RemoveUserPrograms" Directory="UserProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Camara7" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="GameMenuFolder">
+      <Component Id="MenuShortcuts" Guid="*" Win64="yes">
+        <Shortcut Id="MenuShortcut" Name="Câmara 7" Description="Jogar Câmara 7"
+                  Target="[INSTALLFOLDER]Camara 7.exe" WorkingDirectory="INSTALLFOLDER" Icon="GameIcon" />
+        <Shortcut Id="UninstallShortcut" Name="Desinstalar Câmara 7"
+                  Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" />
+        <RemoveFolder Id="RemoveGameMenuFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Camara7" Name="menu" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="DesktopShortcutComp" Guid="*" Win64="yes">
+        <Condition>INSTALLDESKTOPSHORTCUT</Condition>
+        <Shortcut Id="DesktopShortcut" Name="Câmara 7" Description="Jogar Câmara 7"
+                  Target="[INSTALLFOLDER]Camara 7.exe" WorkingDirectory="INSTALLFOLDER" Icon="GameIcon" />
+        <RegistryValue Root="HKCU" Key="Software\Camara7" Name="desktop" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+
+    <Property Id="INSTALLDESKTOPSHORTCUT" Value="1" />
+
+    <Feature Id="Main" Title="Câmara 7" Level="1">
+      <ComponentRef Id="GameFiles" />
+      <ComponentRef Id="MenuShortcuts" />
+      <ComponentRef Id="DesktopShortcutComp" />
+    </Feature>
+
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.LicensePath)" />
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.BannerPath)" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.DialogPath)" />
+    <UIRef Id="WixUI_Minimal" />
+
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Abrir o Câmara 7 agora" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+    <Property Id="WixShellExecTarget" Value="[#GameExeFile]" />
+    <CustomAction Id="LaunchGame" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+    <UI>
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchGame">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+  </Product>
+</Wix>

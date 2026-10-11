@@ -1,0 +1,131 @@
+{
+	"_comment": "Transmissões do rádio. freq = MHz no dial (6–16). if = condição para a estação existir. repeat = estação permanente (música). tag marca histórico × ficção.",
+	"entries": [
+		{
+			"id": "r_tass",
+			"if": [],
+			"tag": "fato histórico (parafraseado)",
+			"lines": [
+				"...anúncio oficial, 28 de abril...",
+				"Na usina nuclear de Chernobyl ocorreu um acidente.",
+				"Um dos reatores foi danificado.",
+				"Medidas estão sendo tomadas. Uma comissão governamental foi formada."
+			],
+			"freq": 7.25
+		},
+		{
+			"id": "r_evac",
+			"if": [
+				"day>=2"
+			],
+			"tag": "fato histórico (parafraseado)",
+			"lines": [
+				"...repetimos o comunicado de domingo aos moradores de Pripyat...",
+				"Devido ao acidente, as condições de radiação estão piorando.",
+				"A evacuação é temporária. Levem documentos e o necessário.",
+				"Os ônibus partirão às catorze horas."
+			],
+			"freq": 8.1
+		},
+		{
+			"id": "r_may",
+			"if": [
+				"day>=4"
+			],
+			"tag": "fato histórico",
+			"lines": [
+				"...e em Kyiv, o desfile do Primeiro de Maio transcorre normalmente.",
+				"Crianças com flores. Bandeiras vermelhas. Sol de primavera.",
+				"(o vento sopra do norte)"
+			],
+			"freq": 9.7
+		},
+		{
+			"id": "r_family",
+			"if": [
+				"day>=5",
+				"quest_done:q_radio"
+			],
+			"tag": "ficção",
+			"lines": [
+				"...mensagens de famílias evacuadas...",
+				"'Mykola Hrytsenko, posto Zaliv. Estamos em Bila Tserkva, na casa da sua tia.'",
+				"'A Olenka pergunta quando você vem. Ela ainda dorme com o urso.'"
+			],
+			"freq": 11.35
+		},
+		{
+			"id": "r_numbers",
+			"if": [
+				"max_depth>=12"
+			],
+			"tag": "ficção",
+			"lines": [
+				"(chiado)",
+				"...sete... sete... dois... seis... zero... quatro...",
+				"...sete... sete...",
+				"(a transmissão para no meio de um número)"
+			],
+			"freq": 13.05
+		},
+		{
+			"id": "r_institute",
+			"if": [
+				"max_depth>=18"
+			],
+			"tag": "ficção",
+			"lines": [
+				"...Instituto nº 7 para Posto Zaliv... protocolo de contenção mantido...",
+				"...não abrir o setor fundo... repito, não abrir...",
+				"(alguém do outro lado respira perto demais do microfone)"
+			],
+			"freq": 14.4
+		},
+		{
+			"id": "r_turno",
+			"if": [
+				"tapes>=4"
+			],
+			"tag": "ficção",
+			"lines": [
+				"(chiado muito longe)",
+				"...aqui é o Turno C... alguém na superfície...",
+				"...estamos bem. Não venham.",
+				"(a voz é a do Petrenko)"
+			],
+			"freq": 15.6
+		},
+		{
+			"id": "r_after",
+			"if": [
+				"chamber_opened"
+			],
+			"tag": "ficção",
+			"lines": [
+				"(silêncio)",
+				"Pela primeira vez desde que você chegou,",
+				"o rádio não tem nada a dizer."
+			],
+			"freq": 6.6
+		},
+		{
+			"id": "r_kyiv",
+			"freq": 12.2,
+			"repeat": true,
+			"tag": "Rádio Kyiv",
+			"if": [],
+			"lines": [
+				"(uma canção folclórica sobre o rio Prípiat, cortada por estática)",
+				"(coral de vozes, longe, como de outra sala)",
+				"(o locutor lê a previsão do tempo: vento norte, céu limpo)",
+				"(silêncio, depois a mesma canção desde o começo)"
+			]
+		}
+	],
+	"idle": [
+		"(só chiado)",
+		"(música folclórica distante, cortada por estática)",
+		"(uma voz lê números de produção de uma fábrica de tratores)",
+		"(estática. Por um segundo, parece uma respiração)"
+	]
+}

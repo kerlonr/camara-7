@@ -1,0 +1,11 @@
+{
+	"_comment": "Receitas da bancada (base). items = consumidos. min_level = nível do personagem exigido.",
+	"entries": [
+		{ "id": "r_flare", "result": "flare", "amount": 2, "items": { "copper_ore": 1, "coal": 2 }, "min_level": 1 },
+		{ "id": "r_battery", "result": "battery", "amount": 1, "items": { "copper_ore": 2, "scrap": 1 }, "min_level": 1 },
+		{ "id": "r_dynamite", "result": "dynamite", "amount": 2, "items": { "coal": 3, "scrap": 2 }, "min_level": 2 },
+		{ "id": "r_filter", "result": "mask_filter", "amount": 1, "items": { "lead_ore": 1, "scrap": 2 }, "min_level": 3 },
+		{ "id": "r_bandage", "result": "medkit", "amount": 1, "items": { "canned_food": 1, "scrap": 1, "elec_components": 1 }, "min_level": 4 },
+		{ "id": "r_dynamite_big", "result": "dynamite", "amount": 5, "items": { "coal": 6, "mech_parts": 2, "uranium_ore": 1 }, "min_level": 6 }
+	]
+}

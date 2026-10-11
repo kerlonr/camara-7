@@ -1,0 +1,187 @@
+{
+	"_comment": "Inimigos. hp/damage são valores BASE; o diretor aplica escala por profundidade e dia com teto (scaling). damage é por golpe, sempre telegrafado (windup). exposure = radiação extra por golpe (%). frames: folha horizontal [andar1, andar2, preparo, ataque]. light_rule: attracted (luz/barulho atraem), fears_fire (não entra perto de fogo/sinalizador), burned_by_light (cone da lanterna e sinalizador causam dano). pickaxe_mult: multiplicador do dano da ferramenta (0 = imune). eyes = brilho dos olhos no escuro (posição relativa ao pé, olhando para a direita).",
+	"fairness": {
+		"player_iframes": 0.8,
+		"max_attackers": 2,
+		"spawn_min_distance": 110,
+		"level_grace_seconds": 18,
+		"tool_damage_mult": 3.0,
+		"knockback": 70
+	},
+	"scaling": {
+		"hp_per_depth": 0.04,
+		"hp_max": 1.8,
+		"damage_per_depth": 0.015,
+		"damage_per_day": 0.015,
+		"damage_max": 1.45
+	},
+	"entries": [
+		{
+			"id": "rat",
+			"name": "Rato da galeria",
+			"sheet": "res://assets/characters/enemies/rat.png",
+			"frame": [
+				16,
+				12
+			],
+			"hp": 6,
+			"speed": 50,
+			"wander_speed": 16,
+			"damage": 2,
+			"exposure": 0,
+			"reach": 11,
+			"windup": 0.38,
+			"recover": 1.4,
+			"sight": 85,
+			"light_rule": "attracted",
+			"pickaxe_mult": 1.0,
+			"flee_below": 0.34,
+			"xp": 6,
+			"drop": {
+				"item": "scrap",
+				"chance": 0.1
+			},
+			"body_radius": 4,
+			"sounds": {
+				"idle": "rat_squeak",
+				"alert": "rat_squeak",
+				"windup": "rat_hiss",
+				"attack": "rat_bite",
+				"hurt": "rat_squeak",
+				"die": "rat_die"
+			},
+			"caption_alert": "[guinchos nas pedras]",
+			"eyes": {
+				"pos": [
+					5,
+					-7
+				],
+				"color": "#ff4a30"
+			},
+			"lore": "Ratos que ficaram quando os homens foram embora. Comem o que acham — e acham de tudo.",
+			"weakness": "Luz e barulho atraem. Três golpes resolvem. Lanterna apagada e passo leve, e eles nem percebem."
+		},
+		{
+			"id": "dog",
+			"name": "Cão da Zona",
+			"sheet": "res://assets/characters/enemies/dog.png",
+			"frame": [
+				24,
+				16
+			],
+			"hp": 18,
+			"speed": 66,
+			"wander_speed": 20,
+			"damage": 7,
+			"exposure": 0,
+			"reach": 14,
+			"windup": 0.5,
+			"recover": 1.5,
+			"sight": 120,
+			"light_rule": "fears_fire",
+			"pickaxe_mult": 1.0,
+			"flee_below": 0.3,
+			"xp": 16,
+			"drop": {},
+			"body_radius": 6,
+			"sounds": {
+				"idle": "dog_growl",
+				"alert": "dog_bark",
+				"windup": "dog_growl",
+				"attack": "dog_bite",
+				"hurt": "dog_yelp",
+				"die": "dog_yelp"
+			},
+			"caption_alert": "[latidos se aproximando]",
+			"eyes": {
+				"pos": [
+					7,
+					-10
+				],
+				"color": "#ffd25a"
+			},
+			"lore": "Cães deixados para trás na evacuação. Andam em matilha à noite e perderam o medo de gente.",
+			"weakness": "Não chegam perto do fogo nem de sinalizador. Durma cedo ou fique junto da fogueira."
+		},
+		{
+			"id": "vulto",
+			"name": "Vulto",
+			"sheet": "res://assets/characters/enemies/vulto.png",
+			"frame": [
+				16,
+				32
+			],
+			"hp": 10,
+			"speed": 34,
+			"wander_speed": 10,
+			"damage": 6,
+			"exposure": 4,
+			"reach": 13,
+			"windup": 0.9,
+			"recover": 2.4,
+			"sight": 140,
+			"light_rule": "burned_by_light",
+			"pickaxe_mult": 0.0,
+			"flee_below": 0.0,
+			"light_burn": 7.0,
+			"xp": 28,
+			"drop": {
+				"item": "blue_crystal",
+				"chance": 0.25
+			},
+			"body_radius": 5,
+			"sounds": {
+				"idle": "vulto_breath",
+				"alert": "whisper",
+				"windup": "vulto_rise",
+				"attack": "vulto_strike",
+				"hurt": "vulto_burn",
+				"die": "vulto_fade"
+			},
+			"caption_alert": "[algo respira atrás de você]",
+			"lore": "Ninguém sabe o que é. Só aparece longe da luz, sempre por trás. Algumas fitas falam dele.",
+			"weakness": "A picareta atravessa. A luz da lanterna queima — vire-se e aponte. Sinalizador também."
+		}
+	],
+	"spawns": {
+		"mine": [
+			{
+				"enemy": "rat",
+				"min_depth": 2,
+				"base": 1,
+				"per_depth": 0.22,
+				"per_day": 0.12,
+				"max": 6,
+				"respawn_seconds": [
+					70,
+					130
+				]
+			},
+			{
+				"enemy": "vulto",
+				"min_depth": 12,
+				"base": 1,
+				"per_depth": 0.12,
+				"per_day": 0.06,
+				"max": 3,
+				"respawn_seconds": [
+					90,
+					160
+				]
+			}
+		],
+		"surface_night": [
+			{
+				"enemy": "dog",
+				"min_day": 3,
+				"base": 1,
+				"per_day": 0.35,
+				"max": 3,
+				"respawn_seconds": [
+					80,
+					150
+				]
+			}
+		]
+	}
+}

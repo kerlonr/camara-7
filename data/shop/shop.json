@@ -1,0 +1,32 @@
+{
+	"_comment": "Terminal de comércio. 'supplies' = itens à venda (preço fixo). sell_multiplier = gancho futuro para mercado/inflação.",
+	"name": "POSTO DE COMÉRCIO Nº 7",
+	"sell_multiplier": 1.0,
+	"supplies": [
+		{
+			"item": "canned_food",
+			"price": 25
+		},
+		{
+			"item": "battery",
+			"price": 35
+		},
+		{
+			"item": "medkit",
+			"price": 70
+		},
+		{
+			"item": "decon_solution",
+			"price": 90
+		},
+		{
+			"item": "potassium_iodide",
+			"price": 60
+		},
+		{
+			"item": "flare",
+			"price": 15
+		}
+	],
+	"decon_cost_per_point": 2
+}

@@ -1,0 +1,525 @@
+{
+	"_comment": "Mapa da base. 'rows' = chão em ASCII (legend → tile). Paredes '#' viram topo/face. 'objects' = props/NPCs/máquinas em células (âncora = base da célula). 'if' = condições para o objeto existir (ex.: NPC que chega no dia 3). action: sleep | shop | decon | mine | radio.",
+	"id": "base",
+	"name": "BASE — Posto Avançado Zaliv",
+	"ambient_sound": "wind",
+	"outdoor": true,
+	"legend": {
+		"#": {
+			"wall": true,
+			"top": "fence_top",
+			"face": "fence_face"
+		},
+		".": {
+			"tiles": [
+				"grass",
+				"grass",
+				"grass2",
+				"grass3"
+			]
+		},
+		",": {
+			"tiles": [
+				"dirt",
+				"dirt2"
+			]
+		},
+		"c": {
+			"tiles": [
+				"concrete",
+				"concrete2"
+			]
+		},
+		"=": {
+			"tiles": [
+				"asphalt",
+				"asphalt2"
+			]
+		},
+		"~": {
+			"tiles": [
+				"puddle"
+			]
+		}
+	},
+	"rows": [
+		"########################################",
+		"#......................................#",
+		"#...,,,,,,,,,,,,,,,,,,,,,...,,,,,,,,,,,#",
+		"#...,ccccccccccccccccccc,...,cccccccccc#",
+		"#...,ccccccccccccccccccc,...,cccccccccc#",
+		"#...,ccccccccccccccccccc,...,cccccccccc#",
+		"#...,ccccccccccccccccccc,...,cccccccccc#",
+		"#...,ccccccccccccccccccc,...,cccccccccc#",
+		"#...,ccccccccccccccccccc,...,cccccccccc#",
+		"#..,,ccccccccccccccc==============ccccc#",
+		"#...,,,,,,,,,,,,,,,,==============ccccc#",
+		"#,,,,,,,,,,,,...........=====,,,,,,,,,,#",
+		"#,cccccccccc,...........=====..........#",
+		"#,cccccccccc,...~~......=====..........#",
+		"#,cccccccccc,.,.........=====..........#",
+		"#,cccccccccc,..,........=====....~.....#",
+		"#,cccccccccc,...........=====..........#",
+		"#,cccccccccc,........~..=====..........#",
+		"#,,,,,,,,,,,,...........=====.,........#",
+		"#..................,....=====..,.......#",
+		"#.....~~................=====.......,..#",
+		"#........,..............=====..........#",
+		"########################=====###########"
+	],
+	"spawns": {
+		"default": [
+			16,
+			9
+		],
+		"from_mine": [
+			34,
+			10
+		],
+		"rescue": [
+			12,
+			9
+		]
+	},
+	"objects": [
+		{
+			"prop": "trailer",
+			"cell": [
+				11,
+				7
+			],
+			"action": "sleep",
+			"prompt": "Dormir / Salvar",
+			"interact_offset": [
+				12,
+				2
+			]
+		},
+		{
+			"prop": "terminal",
+			"cell": [
+				16,
+				7
+			],
+			"action": "shop",
+			"prompt": "Terminal de comércio"
+		},
+		{
+			"npc": "kolya",
+			"cell": [
+				18,
+				7
+			]
+		},
+		{
+			"prop": "radio_table",
+			"cell": [
+				8,
+				4
+			]
+		},
+		{
+			"prop": "decon_shower",
+			"cell": [
+				6,
+				7
+			],
+			"action": "decon",
+			"prompt": "Chuveiro de descontaminação"
+		},
+		{
+			"prop": "mine_entrance",
+			"cell": [
+				34,
+				8
+			],
+			"action": "mine",
+			"prompt": "Entrar na mina"
+		},
+		{
+			"machine": "generator",
+			"cell": [
+				4,
+				15
+			],
+			"pad": true
+		},
+		{
+			"machine": "drill",
+			"cell": [
+				8,
+				15
+			],
+			"pad": true
+		},
+		{
+			"prop": "workbench",
+			"cell": [
+				8,
+				12
+			],
+			"action": "craft",
+			"prompt": "Bancada de trabalho"
+		},
+		{
+			"npc": "oksana",
+			"cell": [
+				10,
+				13
+			],
+			"if": [
+				"!ending_silence"
+			]
+		},
+		{
+			"prop": "fire_barrel",
+			"cell": [
+				20,
+				13
+			]
+		},
+		{
+			"npc": "hanna",
+			"cell": [
+				19,
+				13
+			],
+			"if": [
+				"day>=2"
+			]
+		},
+		{
+			"prop": "bench",
+			"cell": [
+				20,
+				14
+			],
+			"if": [
+				"day>=2"
+			]
+		},
+		{
+			"prop": "uaz",
+			"cell": [
+				32,
+				14
+			],
+			"if": [
+				"day>=3 || max_depth>=5"
+			]
+		},
+		{
+			"npc": "abramov",
+			"cell": [
+				30,
+				15
+			],
+			"if": [
+				"day>=3 || max_depth>=5"
+			]
+		},
+		{
+			"prop": "bus_wreck",
+			"cell": [
+				34,
+				20
+			]
+		},
+		{
+			"prop": "teddy",
+			"cell": [
+				31,
+				20
+			]
+		},
+		{
+			"prop": "doll",
+			"cell": [
+				37,
+				21
+			]
+		},
+		{
+			"prop": "lamp_post",
+			"cell": [
+				14,
+				8
+			]
+		},
+		{
+			"prop": "lamp_post",
+			"cell": [
+				31,
+				10
+			]
+		},
+		{
+			"prop": "lamp_post",
+			"cell": [
+				6,
+				12
+			]
+		},
+		{
+			"prop": "lamp_post",
+			"cell": [
+				22,
+				17
+			]
+		},
+		{
+			"prop": "sign_radiation",
+			"cell": [
+				29,
+				11
+			]
+		},
+		{
+			"prop": "sign_radiation",
+			"cell": [
+				38,
+				16
+			]
+		},
+		{
+			"prop": "sign_danger",
+			"cell": [
+				23,
+				21
+			]
+		},
+		{
+			"prop": "puddle_rad",
+			"cell": [
+				36,
+				15
+			],
+			"radiation": 0.05
+		},
+		{
+			"prop": "barrel_rad",
+			"cell": [
+				37,
+				15
+			],
+			"radiation": 0.06
+		},
+		{
+			"prop": "barrel",
+			"cell": [
+				5,
+				4
+			]
+		},
+		{
+			"prop": "barrel",
+			"cell": [
+				6,
+				4
+			]
+		},
+		{
+			"prop": "gas_cylinders",
+			"cell": [
+				20,
+				4
+			]
+		},
+		{
+			"prop": "concrete_blocks",
+			"cell": [
+				22,
+				5
+			]
+		},
+		{
+			"prop": "concrete_blocks",
+			"cell": [
+				37,
+				4
+			]
+		},
+		{
+			"prop": "cable_spool",
+			"cell": [
+				30,
+				4
+			]
+		},
+		{
+			"prop": "tire",
+			"cell": [
+				13,
+				18
+			]
+		},
+		{
+			"prop": "tire",
+			"cell": [
+				14,
+				19
+			]
+		},
+		{
+			"prop": "car_wreck",
+			"cell": [
+				16,
+				17
+			]
+		},
+		{
+			"prop": "power_pole",
+			"cell": [
+				23,
+				3
+			]
+		},
+		{
+			"prop": "power_pole",
+			"cell": [
+				23,
+				14
+			]
+		},
+		{
+			"prop": "power_pole",
+			"cell": [
+				29,
+				20
+			]
+		},
+		{
+			"prop": "rubble",
+			"cell": [
+				32,
+				12
+			]
+		},
+		{
+			"prop": "tree_pine",
+			"cell": [
+				2,
+				3
+			]
+		},
+		{
+			"prop": "tree_pine",
+			"cell": [
+				2,
+				9
+			]
+		},
+		{
+			"prop": "tree_birch",
+			"cell": [
+				13,
+				1
+			]
+		},
+		{
+			"prop": "tree_red",
+			"cell": [
+				38,
+				12
+			]
+		},
+		{
+			"prop": "tree_red",
+			"cell": [
+				36,
+				12
+			]
+		},
+		{
+			"prop": "tree_red",
+			"cell": [
+				38,
+				19
+			]
+		},
+		{
+			"prop": "tree_red",
+			"cell": [
+				31,
+				18
+			]
+		},
+		{
+			"prop": "tree_red",
+			"cell": [
+				27,
+				1
+			]
+		},
+		{
+			"prop": "tree_red",
+			"cell": [
+				38,
+				1
+			]
+		},
+		{
+			"prop": "tree_pine",
+			"cell": [
+				3,
+				21
+			]
+		},
+		{
+			"prop": "tree_birch",
+			"cell": [
+				26,
+				2
+			]
+		},
+		{
+			"prop": "tree_birch",
+			"cell": [
+				15,
+				21
+			]
+		},
+		{
+			"prop": "tree_birch",
+			"cell": [
+				9,
+				20
+			]
+		},
+		{
+			"prop": "bush",
+			"cell": [
+				14,
+				11
+			]
+		},
+		{
+			"prop": "bush",
+			"cell": [
+				12,
+				19
+			]
+		},
+		{
+			"prop": "bush",
+			"cell": [
+				19,
+				1
+			]
+		},
+		{
+			"prop": "bush",
+			"cell": [
+				21,
+				20
+			]
+		},
+		{
+			"lore": "note_base_01",
+			"cell": [
+				13,
+				8
+			]
+		}
+	]
+}

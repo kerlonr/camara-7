@@ -1,0 +1,484 @@
+{
+ "_comment": "Gerado por tools/tiles_v4.py. coords = coluna/linha no atlas de 16px. shade_N = sombra de contato (N = máscara de paredes: 1 cima, 2 direita, 4 baixo, 8 esquerda).",
+ "texture": "res://assets/environment/tiles/tileset.png",
+ "tile_size": 16,
+ "tiles": {
+  "grass": {
+   "coords": [
+    0,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "grass2": {
+   "coords": [
+    1,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "grass3": {
+   "coords": [
+    2,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "dirt": {
+   "coords": [
+    3,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "dirt2": {
+   "coords": [
+    4,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "asphalt": {
+   "coords": [
+    5,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "asphalt2": {
+   "coords": [
+    6,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "concrete": {
+   "coords": [
+    7,
+    0
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "concrete2": {
+   "coords": [
+    0,
+    1
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "puddle": {
+   "coords": [
+    1,
+    1
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": true
+  },
+  "fence_face": {
+   "coords": [
+    2,
+    1
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "fence_top": {
+   "coords": [
+    3,
+    1
+   ],
+   "solid": true,
+   "occluder": true,
+   "slow": false
+  },
+  "mine_floor": {
+   "coords": [
+    4,
+    1
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "mine_floor2": {
+   "coords": [
+    5,
+    1
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "mine_floor3": {
+   "coords": [
+    6,
+    1
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "mine_gravel": {
+   "coords": [
+    7,
+    1
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "mine_wet": {
+   "coords": [
+    0,
+    2
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": true
+  },
+  "rail_h": {
+   "coords": [
+    1,
+    2
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "rail_v": {
+   "coords": [
+    2,
+    2
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "hot_floor": {
+   "coords": [
+    3,
+    2
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "hot_floor2": {
+   "coords": [
+    4,
+    2
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "rock_top": {
+   "coords": [
+    5,
+    2
+   ],
+   "solid": true,
+   "occluder": true,
+   "slow": false
+  },
+  "rock_top2": {
+   "coords": [
+    6,
+    2
+   ],
+   "solid": true,
+   "occluder": true,
+   "slow": false
+  },
+  "rock_face": {
+   "coords": [
+    7,
+    2
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "rock_face2": {
+   "coords": [
+    0,
+    3
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "rock_face_planks": {
+   "coords": [
+    1,
+    3
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "rock_face_glow": {
+   "coords": [
+    2,
+    3
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "ind_floor": {
+   "coords": [
+    3,
+    3
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "ind_floor2": {
+   "coords": [
+    4,
+    3
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "ind_floor_stripe": {
+   "coords": [
+    5,
+    3
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "ind_top": {
+   "coords": [
+    6,
+    3
+   ],
+   "solid": true,
+   "occluder": true,
+   "slow": false
+  },
+  "ind_face": {
+   "coords": [
+    7,
+    3
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "ind_face2": {
+   "coords": [
+    0,
+    4
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "tile_face": {
+   "coords": [
+    1,
+    4
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "tile_face2": {
+   "coords": [
+    2,
+    4
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "water": {
+   "coords": [
+    3,
+    4
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": true
+  },
+  "void": {
+   "coords": [
+    4,
+    4
+   ],
+   "solid": true,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_0": {
+   "coords": [
+    5,
+    4
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_1": {
+   "coords": [
+    6,
+    4
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_2": {
+   "coords": [
+    7,
+    4
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_3": {
+   "coords": [
+    0,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_4": {
+   "coords": [
+    1,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_5": {
+   "coords": [
+    2,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_6": {
+   "coords": [
+    3,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_7": {
+   "coords": [
+    4,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_8": {
+   "coords": [
+    5,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_9": {
+   "coords": [
+    6,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_10": {
+   "coords": [
+    7,
+    5
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_11": {
+   "coords": [
+    0,
+    6
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_12": {
+   "coords": [
+    1,
+    6
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_13": {
+   "coords": [
+    2,
+    6
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_14": {
+   "coords": [
+    3,
+    6
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  },
+  "shade_15": {
+   "coords": [
+    4,
+    6
+   ],
+   "solid": false,
+   "occluder": false,
+   "slow": false
+  }
+ }
+}

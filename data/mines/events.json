@@ -1,0 +1,15 @@
+{
+	"_comment": "Eventos de nível (até dois por descida, sorteados). effects: lamps_off, red_lights, rad_mult, rad_add, ore_mult, density_mult, extra_room (tipo), extra_puddles, fog (névoa extra), phenomena_mult (frequência de fenômenos), silence (sem som ambiente), tremors.",
+	"entries": [
+		{ "id": "power_outage", "name": "Queda de energia", "chance": 0.12, "min_depth": 3, "message": "As lâmpadas deste nível estão mortas. Só a sua lanterna.", "effects": { "lamps_off": true, "phenomena_mult": 1.4 } },
+		{ "id": "red_alert", "name": "Luz de emergência", "chance": 0.08, "min_depth": 6, "message": "Só as luzes de emergência funcionam. Tudo é vermelho.", "effects": { "red_lights": true } },
+		{ "id": "leak", "name": "Vazamento", "chance": 0.08, "min_depth": 7, "message": "Vazamento detectado. Radiação ambiente elevada neste nível.", "effects": { "rad_mult": 2.5, "rad_add": 0.012, "extra_puddles": 5 } },
+		{ "id": "rich_vein", "name": "Veio rico", "chance": 0.1, "min_depth": 2, "message": "O som da rocha mudou. Há um veio rico por aqui.", "effects": { "ore_mult": 1.9 } },
+		{ "id": "stash", "name": "Depósito abandonado", "chance": 0.08, "min_depth": 3, "message": "Um depósito abandonado foi encontrado neste nível.", "effects": { "extra_room": "storage" } },
+		{ "id": "collapse", "name": "Desabamento", "chance": 0.08, "min_depth": 2, "message": "Desabamento recente. Entulho por todo lado.", "effects": { "density_mult": 1.45, "extra_room": "collapsed" } },
+		{ "id": "fog", "name": "Névoa", "chance": 0.08, "min_depth": 5, "message": "Uma névoa fria cobre o chão deste nível.", "effects": { "fog": 0.28 } },
+		{ "id": "echoes", "name": "Ecos", "chance": 0.08, "min_depth": 6, "message": "Este nível não está quieto. Você ouve coisas.", "effects": { "phenomena_mult": 2.5 } },
+		{ "id": "dead_air", "name": "Ar parado", "chance": 0.06, "min_depth": 9, "message": "Os ventiladores pararam. O silêncio aqui pesa.", "effects": { "silence": true, "phenomena_mult": 1.5 } },
+		{ "id": "quakes", "name": "Tremores", "chance": 0.07, "min_depth": 4, "message": "O chão treme de tempos em tempos.", "effects": { "tremors": true } }
+	]
+}

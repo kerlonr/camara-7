@@ -1,0 +1,36 @@
+{
+	"_comment": "Configuração geral e balanceamento global. title = nome exibido (janela, menus). config/name em project.godot fica 'Chernobyl Miner — Prototype' de propósito: ele define a pasta do save.",
+	"title": "CÂMARA 7",
+	"window_title": "Câmara 7",
+	"subtitle": "ZONA DE EXCLUSÃO · 1986",
+	"version": "0.6.0",
+	"currency_symbol": "Cr",
+	"currency_name": "créditos",
+	"start_money": 40,
+	"start_items": [
+		{ "id": "canned_food", "amount": 2 }
+	],
+	"time": {
+		"day_start_minute": 360,
+		"day_end_minute": 1560,
+		"real_seconds_per_game_minute": 0.7,
+		"sleep_wake_minute": 360
+	},
+	"passout": {
+		"fee_ratio": 0.1,
+		"fee_max": 400,
+		"cargo_loss_ratio": 0.5,
+		"wake_hp_ratio": 0.5,
+		"wake_energy_ratio": 0.5
+	},
+	"mine": {
+		"name": "Mina Krasnyi Yar",
+		"checkpoint_every": 5
+	},
+	"rarity": {
+		"common": { "name": "Comum", "color": "#c9c3ad" },
+		"uncommon": { "name": "Incomum", "color": "#9bd06a" },
+		"rare": { "name": "Raro", "color": "#6fb7e0" },
+		"very_rare": { "name": "Muito raro", "color": "#d39ae0" }
+	}
+}

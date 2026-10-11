@@ -1,0 +1,332 @@
+{
+	"_comment": "Itens. category: tool | ore | material | component | consumable | story. radiation = exposure %/s por unidade carregada (ficção de gameplay). use: efeitos ao consumir (energy, hp, exposure, rad_resist+minutes, note). story = não vende.",
+	"entries": [
+		{
+			"id": "pickaxe",
+			"name": "Ferramenta",
+			"category": "tool",
+			"rarity": "common",
+			"value": 0,
+			"stack": 1,
+			"icon": "res://assets/items/tools/pickaxe_1.png",
+			"desc": "Sua ferramenta de mineração. Melhore no terminal."
+		},
+		{
+			"id": "stone",
+			"name": "Pedra",
+			"category": "ore",
+			"rarity": "common",
+			"value": 1,
+			"stack": 50,
+			"icon": "res://assets/items/stone.png",
+			"desc": "Pedra comum. Vale pouco, mas alguém compra."
+		},
+		{
+			"id": "coal",
+			"name": "Carvão",
+			"category": "ore",
+			"rarity": "common",
+			"value": 4,
+			"stack": 40,
+			"icon": "res://assets/items/coal.png",
+			"desc": "Combustível. O gerador da base queima isso."
+		},
+		{
+			"id": "copper_ore",
+			"name": "Minério de cobre",
+			"category": "ore",
+			"rarity": "common",
+			"value": 7,
+			"stack": 30,
+			"icon": "res://assets/items/copper_ore.png",
+			"desc": "Manchas verdes de oxidação."
+		},
+		{
+			"id": "iron_ore",
+			"name": "Minério de ferro",
+			"category": "ore",
+			"rarity": "common",
+			"value": 9,
+			"stack": 30,
+			"icon": "res://assets/items/iron_ore.png",
+			"desc": "Pesado e avermelhado."
+		},
+		{
+			"id": "scrap",
+			"name": "Sucata metálica",
+			"category": "material",
+			"rarity": "common",
+			"value": 6,
+			"stack": 30,
+			"icon": "res://assets/items/scrap.png",
+			"desc": "Restos de equipamento. Ferrugem por todo lado."
+		},
+		{
+			"id": "lead_ore",
+			"name": "Minério de chumbo",
+			"category": "ore",
+			"rarity": "uncommon",
+			"value": 18,
+			"stack": 30,
+			"icon": "res://assets/items/lead_ore.png",
+			"desc": "Denso e acinzentado. Bom para blindagem."
+		},
+		{
+			"id": "uranium_ore",
+			"name": "Minério de urânio",
+			"category": "ore",
+			"rarity": "rare",
+			"value": 60,
+			"stack": 15,
+			"radiation": 0.004,
+			"icon": "res://assets/items/uranium_ore.png",
+			"desc": "Rende bem. Carregar isso não é de graça."
+		},
+		{
+			"id": "graphite",
+			"name": "Grafite contaminado",
+			"category": "material",
+			"rarity": "rare",
+			"value": 85,
+			"stack": 15,
+			"radiation": 0.006,
+			"icon": "res://assets/items/graphite.png",
+			"desc": "Blocos de grafite (ficção de gameplay). Compradores não perguntam a origem."
+		},
+		{
+			"id": "blue_crystal",
+			"name": "Cristal da veia azul",
+			"category": "ore",
+			"rarity": "very_rare",
+			"value": 260,
+			"stack": 10,
+			"radiation": 0.008,
+			"icon": "res://assets/items/blue_crystal.png",
+			"desc": "Mineral anômalo (ficção). Morno ao toque. Às vezes parece pulsar."
+		},
+		{
+			"id": "mech_parts",
+			"name": "Peças mecânicas",
+			"category": "component",
+			"rarity": "uncommon",
+			"value": 15,
+			"stack": 20,
+			"icon": "res://assets/items/mech_parts.png",
+			"desc": "Engrenagens e rolamentos ainda úteis."
+		},
+		{
+			"id": "elec_components",
+			"name": "Componentes elétricos",
+			"category": "component",
+			"rarity": "uncommon",
+			"value": 25,
+			"stack": 20,
+			"icon": "res://assets/items/elec_components.png",
+			"desc": "Válvulas e relés de outra época."
+		},
+		{
+			"id": "soviet_components",
+			"name": "Componentes soviéticos",
+			"category": "component",
+			"rarity": "very_rare",
+			"value": 240,
+			"stack": 10,
+			"icon": "res://assets/items/soviet_components.png",
+			"desc": "Instrumento de painel intacto. Colecionadores pagam caro."
+		},
+		{
+			"id": "canned_food",
+			"name": "Lata de conserva",
+			"category": "consumable",
+			"rarity": "common",
+			"value": 8,
+			"stack": 10,
+			"icon": "res://assets/items/canned_food.png",
+			"desc": "Carne em conserva. Recupera 50 de energia.",
+			"use": {
+				"energy": 50
+			}
+		},
+		{
+			"id": "medkit",
+			"name": "Kit médico",
+			"category": "consumable",
+			"rarity": "uncommon",
+			"value": 20,
+			"stack": 5,
+			"icon": "res://assets/items/medkit.png",
+			"desc": "Recupera 40 de vida.",
+			"use": {
+				"hp": 40
+			}
+		},
+		{
+			"id": "decon_solution",
+			"name": "Solução descontaminante",
+			"category": "consumable",
+			"rarity": "uncommon",
+			"value": 25,
+			"stack": 5,
+			"icon": "res://assets/items/decon_solution.png",
+			"desc": "Reduz 25% de exposição. (Mecânica de jogo — não existe 'cura' assim.)",
+			"use": {
+				"exposure": -25
+			}
+		},
+		{
+			"id": "potassium_iodide",
+			"name": "Iodeto de potássio",
+			"category": "consumable",
+			"rarity": "uncommon",
+			"value": 15,
+			"stack": 10,
+			"icon": "res://assets/items/potassium_iodide.png",
+			"desc": "No jogo: -30% de exposição recebida por 4 horas. Na vida real o iodeto protege só a tireoide contra iodo radioativo.",
+			"use": {
+				"rad_resist": 0.3,
+				"minutes": 240
+			}
+		},
+		{
+			"id": "samogon",
+			"name": "Samogon",
+			"category": "consumable",
+			"rarity": "common",
+			"value": 6,
+			"stack": 10,
+			"icon": "res://assets/items/samogon.png",
+			"desc": "Aguardente caseira. Mito da época: 'álcool protege da radiação'. Não protege. Recupera 25 de energia.",
+			"use": {
+				"energy": 25
+			}
+		},
+		{
+			"id": "tape_1",
+			"name": "Fita nº 1 — Turno C",
+			"category": "story",
+			"rarity": "very_rare",
+			"value": 0,
+			"stack": 1,
+			"icon": "res://assets/items/tape.png",
+			"desc": "Gravação do mestre Petrenko. Botão direito para ouvir.",
+			"use": {
+				"note": "tape_1"
+			}
+		},
+		{
+			"id": "tape_2",
+			"name": "Fita nº 2 — Turno C",
+			"category": "story",
+			"rarity": "very_rare",
+			"value": 0,
+			"stack": 1,
+			"icon": "res://assets/items/tape.png",
+			"desc": "Gravação do mestre Petrenko. Botão direito para ouvir.",
+			"use": {
+				"note": "tape_2"
+			}
+		},
+		{
+			"id": "tape_3",
+			"name": "Fita nº 3 — Turno C",
+			"category": "story",
+			"rarity": "very_rare",
+			"value": 0,
+			"stack": 1,
+			"icon": "res://assets/items/tape.png",
+			"desc": "Gravação do mestre Petrenko. Botão direito para ouvir.",
+			"use": {
+				"note": "tape_3"
+			}
+		},
+		{
+			"id": "tape_4",
+			"name": "Fita nº 4 — Turno C",
+			"category": "story",
+			"rarity": "very_rare",
+			"value": 0,
+			"stack": 1,
+			"icon": "res://assets/items/tape.png",
+			"desc": "Gravação do mestre Petrenko. Botão direito para ouvir.",
+			"use": {
+				"note": "tape_4"
+			}
+		},
+		{
+			"id": "tape_5",
+			"name": "Fita nº 5 — Turno C",
+			"category": "story",
+			"rarity": "very_rare",
+			"value": 0,
+			"stack": 1,
+			"icon": "res://assets/items/tape.png",
+			"desc": "Gravação do mestre Petrenko. Botão direito para ouvir.",
+			"use": {
+				"note": "tape_5"
+			}
+		},
+		{
+			"id": "ivan_helmet",
+			"name": "Capacete com fita vermelha",
+			"category": "story",
+			"rarity": "very_rare",
+			"value": 0,
+			"stack": 1,
+			"icon": "res://assets/items/ivan_helmet.png",
+			"desc": "Capacete de mineiro antigo. Na lanterna, uma fita vermelha desbotada."
+		},
+		{
+			"id": "flare",
+			"name": "Sinalizador",
+			"category": "consumable",
+			"rarity": "common",
+			"value": 4,
+			"stack": 10,
+			"icon": "res://assets/items/flare.png",
+			"desc": "Arremesse (clique) para iluminar uma área vermelha por 90 segundos.",
+			"use": {
+				"throw": "flare"
+			}
+		},
+		{
+			"id": "dynamite",
+			"name": "Dinamite",
+			"category": "consumable",
+			"rarity": "uncommon",
+			"value": 10,
+			"stack": 10,
+			"icon": "res://assets/items/dynamite.png",
+			"desc": "Arremesse (clique). Explode após 2 s e quebra rochas por perto. Não fique perto.",
+			"use": {
+				"throw": "dynamite"
+			}
+		},
+		{
+			"id": "mask_filter",
+			"name": "Filtro de máscara",
+			"category": "consumable",
+			"rarity": "uncommon",
+			"value": 12,
+			"stack": 5,
+			"icon": "res://assets/items/mask_filter.png",
+			"desc": "Troca o filtro: -40% de exposição recebida por 3 horas.",
+			"use": {
+				"rad_resist": 0.4,
+				"minutes": 180
+			}
+		},
+		{
+			"id": "battery",
+			"name": "Bateria",
+			"category": "consumable",
+			"rarity": "common",
+			"value": 8,
+			"stack": 10,
+			"icon": "res://assets/items/battery.png",
+			"desc": "Recarrega a lanterna por completo.",
+			"use": {
+				"battery": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"_comment": "Dicas contextuais (aparecem uma vez, se ativadas nas opções). Disparadas por id no código.",
+	"entries": {
+		"welcome": "Fale com as pessoas da base (E). Um [!] sobre a cabeça indica conversa ou missão nova.",
+		"first_mine": "Segure o botão esquerdo para minerar. A escada no chão desce; a da parede sobe para a base.",
+		"geiger": "O Geiger clica mais rápido perto de radiação. Exposição alta reduz a energia e depois a vida.",
+		"inventory_full": "Mochila cheia. Venda no terminal ou compre uma mochila maior.",
+		"exhausted": "Sem energia os golpes ficam fracos. Coma uma conserva ou durma no trailer.",
+		"night": "Está ficando tarde. Às 02:00 você desmaia onde estiver.",
+		"tape": "Você achou uma fita. Abra a mochila (TAB) e clique com o botão direito nela para ouvir.",
+		"quest_ready": "Missão pronta: volte e fale com quem pediu.",
+		"journal": "Pressione J para abrir o diário: missões, fitas e notas.",
+		"phenomenon": "Algo estranho aconteceu. Fique perto da luz.",
+		"elevator": "Você restaurou um ponto de elevador. Na entrada da mina, escolha o nível.",
+		"upgrade": "Você tem dinheiro para uma melhoria. Veja a aba MELHORIAS no terminal.",
+		"dosimeter_pen": "DICA: a caneta embaixo do relógio é o dosímetro: mostra a dose acumulada. Passou da marca amarela, cansa; da vermelha, faz mal; no fim, você desmaia. F liga/desliga a lanterna."
+	}
+}

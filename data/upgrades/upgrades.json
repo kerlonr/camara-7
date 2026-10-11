@@ -1,0 +1,84 @@
+{
+	"_comment": "Trilhas de upgrade. levels[0] = estado inicial (grátis). Cada nível: cost, items (consumidos), requires {upgrades:{trilha:nivel}, max_depth}, set (substitui atributo), add (soma, acumula entre níveis).",
+	"categories": {
+		"mineracao": "MINERAÇÃO",
+		"protecao": "PROTEÇÃO",
+		"logistica": "LOGÍSTICA",
+		"exploracao": "EXPLORAÇÃO",
+		"energia": "ENERGIA",
+		"automacao": "AUTOMAÇÃO"
+	},
+	"entries": [
+		{
+			"id": "tool", "name": "Ferramenta de mineração", "category": "mineracao",
+			"levels": [
+				{ "name": "Picareta improvisada", "desc": "Cabo de pá e uma cabeça de ferro torta.", "set": { "tool_power": 1, "tool_tier": 1, "tool_cooldown": 0.5, "tool_energy_cost": 1.0, "tool_mode": "swing", "tool_sprite": "res://assets/items/tools/pickaxe_1.png" } },
+				{ "name": "Picareta de ferro", "desc": "Quebra chumbo e rocha compacta. Dobro do dano.", "cost": 300, "set": { "tool_power": 2, "tool_tier": 2, "tool_cooldown": 0.45, "tool_energy_cost": 1.0, "tool_sprite": "res://assets/items/tools/pickaxe_2.png" } },
+				{ "name": "Picareta reforçada", "desc": "Aço temperado. Quebra urânio e grafite.", "cost": 1400, "items": { "iron_ore": 15 }, "requires": { "max_depth": 8 }, "set": { "tool_power": 3, "tool_tier": 3, "tool_cooldown": 0.4, "tool_energy_cost": 0.9, "tool_sprite": "res://assets/items/tools/pickaxe_3.png" } },
+				{ "name": "Britadeira pneumática", "desc": "Segure o botão: golpes rápidos e contínuos.", "cost": 4800, "items": { "mech_parts": 6, "iron_ore": 20 }, "requires": { "max_depth": 14 }, "set": { "tool_power": 2, "tool_tier": 4, "tool_cooldown": 0.12, "tool_energy_cost": 0.3, "tool_mode": "drill", "tool_sprite": "res://assets/items/tools/drill_1.png" } },
+				{ "name": "Britadeira industrial", "desc": "Mais força, menos esforço.", "cost": 14000, "items": { "elec_components": 6, "lead_ore": 15 }, "requires": { "max_depth": 22 }, "set": { "tool_power": 3, "tool_tier": 5, "tool_cooldown": 0.1, "tool_energy_cost": 0.25, "tool_mode": "drill", "tool_sprite": "res://assets/items/tools/drill_2.png" } }
+			]
+		},
+		{
+			"id": "suit", "name": "Traje de proteção", "category": "protecao",
+			"levels": [
+				{ "name": "Traje nível 1", "desc": "Borracha amarela remendada. Pouca proteção.", "set": { "suit": 1, "rad_protection": 0.0 } },
+				{ "name": "Traje reforçado", "desc": "Camadas extras. -30% de radiação externa.", "cost": 650, "items": { "scrap": 10 }, "set": { "suit": 2, "rad_protection": 0.3 } },
+				{ "name": "Traje industrial", "desc": "-55% de radiação externa. +20 de vida.", "cost": 2600, "items": { "lead_ore": 10 }, "requires": { "max_depth": 10 }, "set": { "suit": 3, "rad_protection": 0.55 }, "add": { "max_hp": 20 } },
+				{ "name": "Traje especializado", "desc": "-75% de radiação externa. +20 de vida.", "cost": 9500, "items": { "lead_ore": 20, "elec_components": 4 }, "requires": { "max_depth": 18 }, "set": { "suit": 4, "rad_protection": 0.75 }, "add": { "max_hp": 20 } }
+			]
+		},
+		{
+			"id": "backpack", "name": "Mochila", "category": "logistica",
+			"levels": [
+				{ "name": "Mochila de lona", "desc": "18 espaços.", "set": { "inventory_slots": 18 } },
+				{ "name": "Mochila militar", "desc": "27 espaços.", "cost": 450, "set": { "inventory_slots": 27 } },
+				{ "name": "Mochila de carga", "desc": "36 espaços.", "cost": 2200, "items": { "mech_parts": 4 }, "set": { "inventory_slots": 36 } }
+			]
+		},
+		{
+			"id": "lining", "name": "Revestimento de chumbo", "category": "logistica",
+			"levels": [
+				{ "name": "Sem revestimento", "desc": "Material radioativo na mochila irradia você." },
+				{ "name": "Mochila revestida", "desc": "Bloqueia 65% da radiação da carga.", "cost": 1500, "items": { "lead_ore": 12 }, "set": { "carried_shield": 0.65 } }
+			]
+		},
+		{
+			"id": "lantern", "name": "Iluminação", "category": "exploracao",
+			"levels": [
+				{ "name": "Lampião de querosene", "desc": "Luz curta e alaranjada.", "set": { "light_scale": 1.0, "light_energy": 1.0, "light_color": "#ffc98a" } },
+				{ "name": "Lanterna de capacete", "desc": "Luz mais longa e branca.", "cost": 350, "items": { "copper_ore": 6 }, "set": { "light_scale": 1.45, "light_energy": 1.1, "light_color": "#fff0d0" } },
+				{ "name": "Holofote portátil", "desc": "Ilumina boa parte da galeria.", "cost": 1900, "items": { "elec_components": 3 }, "set": { "light_scale": 2.0, "light_energy": 1.2, "light_color": "#e8f4ff" } }
+			]
+		},
+		{
+			"id": "dosimeter", "name": "Dosímetro digital", "category": "protecao",
+			"levels": [
+				{ "name": "Só o Geiger", "desc": "Você ouve os cliques e vê o ponteiro." },
+				{ "name": "Dosímetro digital", "desc": "Mostra valores exatos e apita em níveis perigosos.", "cost": 200, "set": { "dosimeter": 1 } }
+			]
+		},
+		{
+			"id": "elevator", "name": "Elevador da mina", "category": "exploracao",
+			"levels": [
+				{ "name": "Escadas", "desc": "Sempre começa do nível 1." },
+				{ "name": "Elevador restaurado", "desc": "Desce direto para níveis já alcançados (a cada 5).", "cost": 900, "items": { "scrap": 15, "copper_ore": 10 }, "requires": { "max_depth": 5 }, "set": { "elevator": 1 } }
+			]
+		},
+		{
+			"id": "generator", "name": "Gerador a diesel", "category": "energia",
+			"levels": [
+				{ "name": "Sem energia", "desc": "A base está no escuro." },
+				{ "name": "Gerador a diesel", "desc": "Queima carvão e energiza máquinas da base.", "cost": 1200, "items": { "iron_ore": 10, "copper_ore": 8 }, "requires": { "max_depth": 4 }, "set": { "machine_generator": 1 } }
+			]
+		},
+		{
+			"id": "drill_rig", "name": "Perfuratriz automática", "category": "automacao",
+			"levels": [
+				{ "name": "Nenhuma", "desc": "Toda a mineração é manual." },
+				{ "name": "Perfuratriz Mk1", "desc": "Extrai minério sozinha enquanto houver energia.", "cost": 2500, "items": { "iron_ore": 20, "mech_parts": 4 }, "requires": { "upgrades": { "generator": 1 } }, "set": { "machine_drill": 1 } },
+				{ "name": "Perfuratriz Mk2", "desc": "Mais rápida, alcança chumbo.", "cost": 7000, "items": { "lead_ore": 10, "elec_components": 4 }, "requires": { "max_depth": 12 }, "set": { "machine_drill": 2 } }
+			]
+		}
+	]
+}

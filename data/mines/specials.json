@@ -1,0 +1,26 @@
+{
+	"_comment": "Encontros especiais (raros, no máximo 1 por nível; inspirados nos encontros especiais dos RPGs clássicos). chance = por descida. once = só uma vez por save. A mensagem só aparece quando o jogador encontra (o mistério é parte da graça).",
+	"total_chance": 0.16,
+	"entries": [
+		{ "id": "lost_miner", "weight": 3, "min_depth": 4, "once": false, "xp": 25,
+		  "message": "Havia alguém sentado ali. Agora não há.",
+		  "drops": [["canned_food", 1, 1.0], ["medkit", 1, 0.5], ["battery", 1, 0.5]] },
+		{ "id": "radio_room", "weight": 2, "min_depth": 6, "once": false, "xp": 20,
+		  "prompt": "Desligar o rádio",
+		  "message": "Ninguém desce aqui há semanas. Quem ligou isso?",
+		  "drops": [["soviet_components", 2, 1.0], ["elec_components", 1, 0.6]] },
+		{ "id": "full_cart", "weight": 3, "min_depth": 2, "once": false, "xp": 10,
+		  "prompt": "Vasculhar o carrinho",
+		  "message": "Alguém encheu este carrinho e nunca voltou para buscar." },
+		{ "id": "kolya_stash", "weight": 1, "min_depth": 5, "once": true, "xp": 15,
+		  "prompt": "Tirar os tijolos soltos",
+		  "message": "Bilhete: \"Não conta pra ninguém. — K.\"",
+		  "drops": [["samogon", 3, 1.0]], "flag": "kolya_stash_found" },
+		{ "id": "geiger_song", "weight": 2, "min_depth": 10, "once": false, "xp": 30,
+		  "message": "O contador clicou em ritmo. Sete. Sete. Dois. Seis. Zero. Quatro." },
+		{ "id": "helmet_circle", "weight": 2, "min_depth": 7, "once": false, "xp": 20,
+		  "prompt": "Acender as velas",
+		  "message": "Você acende as velas pelos homens do Turno C. Por um tempo, o ar parece mais leve.",
+		  "resist": [0.25, 120] }
+	]
+}

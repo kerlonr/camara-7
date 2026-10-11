@@ -1,0 +1,41 @@
+{
+	"_comment": "Cenas em slides (intro, câmara, finais). Cada slide: text, opcional tag ('fato histórico' | 'ficção'), sound. choices no último slide: [{text, flag, next_scene}].",
+	"intro": [
+		{ "text": "26 de abril de 1986, 01:23.\nO reator nº 4 da usina nuclear de Chernobyl explode.", "tag": "fato histórico", "sound": "stinger" },
+		{ "text": "27 de abril. Pripyat é evacuada.\nDizem aos moradores que será só por três dias.", "tag": "fato histórico" },
+		{ "text": "Nas semanas seguintes, centenas de mineiros de Tula e do Donbass\nserão chamados para cavar um túnel sob o reator.", "tag": "fato histórico" },
+		{ "text": "Você é um deles. Mas não foi mandado para o reator.\nFoi mandado para a mina Krasnyi Yar, a nove quilômetros dali.", "tag": "ficção" },
+		{ "text": "Na noite da explosão, o Turno C desceu ao setor fundo da mina.\nDoze homens.\nNenhum voltou.", "tag": "ficção" },
+		{ "text": "28 de abril de 1986.\nPosto Avançado Zaliv.", "sound": "stinger_soft" }
+	],
+	"chamber_locked": [
+		{ "text": "Uma porta hermética, mais velha que a mina.\nUm teclado de quatro dígitos, coberto de pó.\nVocê não sabe o código." }
+	],
+	"chamber": [
+		{ "text": "2... 6... 0... 4.\nA porta cede com um suspiro de ar parado há dias.", "sound": "door_heavy" },
+		{ "text": "Lá dentro, uma câmara redonda de pedra antiga.\nNas paredes, veios azulados pulsam devagar, como respiração." },
+		{ "text": "Doze capacetes alinhados no chão.\nTodos os relógios parados em 01:23." },
+		{ "text": "No centro, o gravador do Petrenko. Uma última fita.\n\n\"Fomos nós que trancamos a porta. Por dentro.\nO que o Instituto queria não pode subir.\nDiga às nossas famílias que escolhemos ficar.\"", "sound": "tape" },
+		{ "text": "Há equipamentos do Instituto ainda ligados.\nUm deles transmite. Há dias.\nAlguém lá em cima sabia de tudo.",
+		  "choices": [
+			{ "text": "Levar as fitas para Oksana", "flag": "ending_truth", "next_scene": "ending_truth" },
+			{ "text": "Entregar tudo ao Dr. Abramov", "flag": "ending_silence", "next_scene": "ending_silence" }
+		  ] }
+	],
+	"ending_truth": [
+		{ "text": "Você sobe com as fitas e o último gravador.\nOksana ouve tudo em silêncio, a noite inteira." },
+		{ "text": "No dia seguinte ela parte para Kyiv.\nNinguém publica nada. Mas as famílias dos doze recebem uma carta,\ncom nomes e com a verdade." },
+		{ "text": "O Turno C não está mais 'desaparecido em inundação'.\nEstá onde escolheu estar.", "sound": "stinger_soft" },
+		{ "text": "FIM — A VERDADE\n\nA mina continua lá embaixo. E não termina.\nVocê pode continuar minerando." }
+	],
+	"ending_silence": [
+		{ "text": "Você entrega as fitas ao Dr. Abramov.\nEle não as ouve. Apenas assina um recibo." },
+		{ "text": "Na manhã seguinte, a Oksana não está mais na base.\nNinguém sabe para onde ela foi." },
+		{ "text": "O Instituto paga muito bem.\nO relatório oficial continua: inundação no setor fundo.", "sound": "stinger_soft" },
+		{ "text": "FIM — O SILÊNCIO\n\nA mina continua lá embaixo. E não termina.\nVocê pode continuar minerando." }
+	],
+	"epilogue": [
+		{ "text": "Nota histórica:\nEm 1986, cerca de 400 mineiros de Tula e do Donbass cavaram\num túnel sob o reator 4 para instalar um sistema de resfriamento.", "tag": "fato histórico" },
+		{ "text": "O Turno C, a mina Krasnyi Yar, o Instituto nº 7, Oksana, Kolya, Hanna e Abramov\nsão ficção.\nAs pessoas reais que trabalharam na Zona, não.", "tag": "ficção / fato" }
+	]
+}

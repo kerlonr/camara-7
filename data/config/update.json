@@ -1,0 +1,9 @@
+{
+	"_comment": "Atualização automática. O jogo instalado é 'Camara 7.exe' (motor) + 'Camara 7.pck' (todo o conteúdo). Uma atualização troca só o .pck, baixado do último release do GitHub. 'engine' no update.json do release precisa ser igual à versão do motor instalado; se não for, o jogo avisa para baixar o instalador novo.",
+	"repo": "kerlonr/camara-7",
+	"api_latest": "https://api.github.com/repos/%s/releases/latest",
+	"manifest_asset": "update.json",
+	"pck_asset": "Camara7.pck",
+	"releases_page": "https://github.com/%s/releases/latest",
+	"timeout_seconds": 20
+}

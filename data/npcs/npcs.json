@@ -1,0 +1,37 @@
+{
+	"_comment": "NPCs. barks = falas curtas em balão quando o jogador passa perto (com condição opcional). Conversa completa em data/story/dialogues.json. Personagens fictícios.",
+	"entries": {
+		"kolya": {
+			"name": "Kolya", "role": "Comerciante", "sprite": "res://assets/characters/npc/kolya.png",
+			"barks": [
+				{ "text": "Compro tudo. Quase tudo." },
+				{ "text": "Mais um dia sem notícia." },
+				{ "if": ["quest_done:q_radio"], "text": "O rádio diz que o vento mudou." }
+			]
+		},
+		"oksana": {
+			"name": "Oksana", "role": "Engenheira", "sprite": "res://assets/characters/npc/oksana.png",
+			"barks": [
+				{ "text": "Dmytro..." },
+				{ "text": "Essa chave inglesa já foi do meu pai." },
+				{ "if": ["tapes>=1"], "text": "Achou mais alguma fita?" }
+			]
+		},
+		"hanna": {
+			"name": "Baba Hanna", "role": "Moradora de Zaliv", "sprite": "res://assets/characters/npc/hanna.png",
+			"barks": [
+				{ "text": "Senta um pouco, filho." },
+				{ "text": "Os pinheiros estão ruivos..." },
+				{ "text": "Ivan, Ivan..." }
+			]
+		},
+		"abramov": {
+			"name": "Dr. Abramov", "role": "Instituto nº 7", "sprite": "res://assets/characters/npc/abramov.png",
+			"barks": [
+				{ "text": "Leituras interessantes." },
+				{ "text": "Não toque no jipe." },
+				{ "if": ["tapes>=3"], "text": "As gravações, camarada..." }
+			]
+		}
+	}
+}

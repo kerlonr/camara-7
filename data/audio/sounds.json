@@ -1,0 +1,720 @@
+{
+	"_comment": "Mapa id → arquivo(s). Vários arquivos = variação aleatória. volume em dB, pitch_var = variação ±. bus: SFX (padrão) | UI | Ambient. caption = legenda (acessibilidade). Gerados por tools/gen_audio.py.",
+	"sfx": {
+		"geiger": {
+			"files": [
+				"res://assets/audio/sfx/geiger_1.wav",
+				"res://assets/audio/sfx/geiger_2.wav",
+				"res://assets/audio/sfx/geiger_3.wav"
+			],
+			"volume": -7,
+			"pitch_var": 0.08,
+			"bus": "UI"
+		},
+		"hit_rock": {
+			"files": [
+				"res://assets/audio/sfx/hit_rock_1.wav",
+				"res://assets/audio/sfx/hit_rock_2.wav",
+				"res://assets/audio/sfx/hit_rock_3.wav"
+			],
+			"volume": -3,
+			"pitch_var": 0.1
+		},
+		"hit_metal": {
+			"files": [
+				"res://assets/audio/sfx/hit_metal.wav"
+			],
+			"volume": -9,
+			"pitch_var": 0.12
+		},
+		"hit_fail": {
+			"files": [
+				"res://assets/audio/sfx/hit_fail.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.05
+		},
+		"rock_break": {
+			"files": [
+				"res://assets/audio/sfx/rock_break.wav"
+			],
+			"volume": -2,
+			"pitch_var": 0.12
+		},
+		"wood_break": {
+			"files": [
+				"res://assets/audio/sfx/wood_break.wav"
+			],
+			"volume": -4,
+			"pitch_var": 0.1
+		},
+		"pickup": {
+			"files": [
+				"res://assets/audio/sfx/pickup.wav"
+			],
+			"volume": -14,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"rare_find": {
+			"files": [
+				"res://assets/audio/sfx/rare_find.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"step": {
+			"files": [
+				"res://assets/audio/sfx/step_1.wav",
+				"res://assets/audio/sfx/step_2.wav",
+				"res://assets/audio/sfx/step_3.wav"
+			],
+			"volume": -19,
+			"pitch_var": 0.15
+		},
+		"swing": {
+			"files": [
+				"res://assets/audio/sfx/swing.wav"
+			],
+			"volume": -16,
+			"pitch_var": 0.15
+		},
+		"ui_click": {
+			"files": [
+				"res://assets/audio/sfx/ui_click.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.05,
+			"bus": "UI"
+		},
+		"ui_hover": {
+			"files": [
+				"res://assets/audio/sfx/ui_hover.wav"
+			],
+			"volume": -22,
+			"pitch_var": 0.05,
+			"bus": "UI"
+		},
+		"ui_open": {
+			"files": [
+				"res://assets/audio/sfx/ui_open.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"ui_buy": {
+			"files": [
+				"res://assets/audio/sfx/ui_buy.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"ui_error": {
+			"files": [
+				"res://assets/audio/sfx/ui_error.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"sell": {
+			"files": [
+				"res://assets/audio/sfx/sell.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.05,
+			"bus": "UI"
+		},
+		"quest": {
+			"files": [
+				"res://assets/audio/sfx/quest.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"quest_done": {
+			"files": [
+				"res://assets/audio/sfx/quest_done.wav"
+			],
+			"volume": -7,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"text_blip": {
+			"files": [
+				"res://assets/audio/sfx/text_blip.wav"
+			],
+			"volume": -22,
+			"pitch_var": 0.06,
+			"bus": "UI"
+		},
+		"terminal_beep": {
+			"files": [
+				"res://assets/audio/sfx/terminal_beep.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"alarm": {
+			"files": [
+				"res://assets/audio/sfx/alarm_beep.wav"
+			],
+			"volume": -13,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"ladder": {
+			"files": [
+				"res://assets/audio/sfx/ladder.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.05
+		},
+		"door": {
+			"files": [
+				"res://assets/audio/sfx/door.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.05
+		},
+		"door_heavy": {
+			"files": [
+				"res://assets/audio/sfx/door_heavy.wav"
+			],
+			"volume": -3,
+			"pitch_var": 0.0
+		},
+		"sleep": {
+			"files": [
+				"res://assets/audio/sfx/sleep.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"passout": {
+			"files": [
+				"res://assets/audio/sfx/passout.wav"
+			],
+			"volume": -4,
+			"pitch_var": 0.0
+		},
+		"hurt": {
+			"files": [
+				"res://assets/audio/sfx/hurt.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.1
+		},
+		"paper": {
+			"files": [
+				"res://assets/audio/sfx/paper.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.1,
+			"bus": "UI"
+		},
+		"tape": {
+			"files": [
+				"res://assets/audio/sfx/tape.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"radio_burst": {
+			"files": [
+				"res://assets/audio/sfx/radio_burst.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.05,
+			"bus": "UI"
+		},
+		"radio_tick": {
+			"files": [
+				"res://assets/audio/sfx/radio_tick.wav"
+			],
+			"volume": -14,
+			"pitch_var": 0.1,
+			"bus": "UI"
+		},
+		"stinger": {
+			"files": [
+				"res://assets/audio/sfx/stinger.wav"
+			],
+			"volume": -4,
+			"pitch_var": 0.0,
+			"bus": "Music"
+		},
+		"stinger_soft": {
+			"files": [
+				"res://assets/audio/sfx/stinger_soft.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.0,
+			"bus": "Music"
+		},
+		"steam_burst": {
+			"files": [
+				"res://assets/audio/sfx/steam_burst.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.1
+		},
+		"spark": {
+			"files": [
+				"res://assets/audio/sfx/spark.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.15
+		},
+		"drip": {
+			"files": [
+				"res://assets/audio/sfx/drip_1.wav",
+				"res://assets/audio/sfx/drip_2.wav"
+			],
+			"volume": -15,
+			"pitch_var": 0.25
+		},
+		"whisper": {
+			"files": [
+				"res://assets/audio/sfx/whisper_1.wav",
+				"res://assets/audio/sfx/whisper_2.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.08
+		},
+		"knock": {
+			"files": [
+				"res://assets/audio/sfx/knock.wav"
+			],
+			"volume": -4,
+			"pitch_var": 0.05
+		},
+		"name_call": {
+			"files": [
+				"res://assets/audio/sfx/name_call.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.0
+		},
+		"radio_voice": {
+			"files": [
+				"res://assets/audio/sfx/radio_voice.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.0
+		},
+		"power_down": {
+			"files": [
+				"res://assets/audio/sfx/power_down.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.05
+		},
+		"quake": {
+			"files": [
+				"res://assets/audio/sfx/quake.wav"
+			],
+			"volume": -5,
+			"pitch_var": 0.06,
+			"caption": "[a rocha treme]"
+		},
+		"creak": {
+			"files": [
+				"res://assets/audio/sfx/creak_1.wav",
+				"res://assets/audio/sfx/creak_2.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.2
+		},
+		"metal_groan": {
+			"files": [
+				"res://assets/audio/sfx/metal_groan.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.15,
+			"caption": "[metal rangendo ao longe]"
+		},
+		"distant_bang": {
+			"files": [
+				"res://assets/audio/sfx/distant_bang.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.15,
+			"caption": "[estrondo distante]"
+		},
+		"siren": {
+			"files": [
+				"res://assets/audio/sfx/siren_distant.wav"
+			],
+			"volume": -18,
+			"pitch_var": 0.03,
+			"caption": "[sirene distante]"
+		},
+		"dog_howl": {
+			"files": [
+				"res://assets/audio/sfx/dog_howl.wav"
+			],
+			"volume": -18,
+			"pitch_var": 0.1,
+			"caption": "[cachorro uivando longe]"
+		},
+		"wind_gust": {
+			"files": [
+				"res://assets/audio/sfx/wind_gust.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.1
+		},
+		"level_up": {
+			"files": [
+				"res://assets/audio/sfx/level_up.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		},
+		"craft": {
+			"files": [
+				"res://assets/audio/sfx/craft.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.06,
+			"bus": "UI"
+		},
+		"battery": {
+			"files": [
+				"res://assets/audio/sfx/battery.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.03,
+			"bus": "UI"
+		},
+		"thud": {
+			"files": [
+				"res://assets/audio/sfx/thud.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.15
+		},
+		"flare": {
+			"files": [
+				"res://assets/audio/sfx/flare.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.08
+		},
+		"fuse": {
+			"files": [
+				"res://assets/audio/sfx/fuse.wav"
+			],
+			"volume": -9,
+			"pitch_var": 0.05
+		},
+		"explosion": {
+			"files": [
+				"res://assets/audio/sfx/explosion.wav"
+			],
+			"volume": -1,
+			"pitch_var": 0.08,
+			"caption": "[explosão]"
+		},
+		"rat_squeak": {
+			"files": [
+				"res://assets/audio/sfx/rat_squeak_1.wav",
+				"res://assets/audio/sfx/rat_squeak_2.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.15
+		},
+		"rat_hiss": {
+			"files": [
+				"res://assets/audio/sfx/rat_hiss.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.08
+		},
+		"rat_bite": {
+			"files": [
+				"res://assets/audio/sfx/rat_bite.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.08
+		},
+		"rat_die": {
+			"files": [
+				"res://assets/audio/sfx/rat_die.wav"
+			],
+			"volume": -12,
+			"pitch_var": 0.08
+		},
+		"dog_growl": {
+			"files": [
+				"res://assets/audio/sfx/dog_growl.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.1
+		},
+		"dog_bark": {
+			"files": [
+				"res://assets/audio/sfx/dog_bark.wav"
+			],
+			"volume": -4,
+			"pitch_var": 0.1,
+			"caption": "[latidos]"
+		},
+		"dog_bite": {
+			"files": [
+				"res://assets/audio/sfx/dog_bite.wav"
+			],
+			"volume": -4,
+			"pitch_var": 0.08
+		},
+		"dog_yelp": {
+			"files": [
+				"res://assets/audio/sfx/dog_yelp.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.1
+		},
+		"vulto_breath": {
+			"files": [
+				"res://assets/audio/sfx/vulto_breath.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.05
+		},
+		"vulto_rise": {
+			"files": [
+				"res://assets/audio/sfx/vulto_rise.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.03
+		},
+		"vulto_strike": {
+			"files": [
+				"res://assets/audio/sfx/vulto_strike.wav"
+			],
+			"volume": -3,
+			"pitch_var": 0.05
+		},
+		"vulto_burn": {
+			"files": [
+				"res://assets/audio/sfx/vulto_burn.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.1
+		},
+		"vulto_fade": {
+			"files": [
+				"res://assets/audio/sfx/vulto_fade.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.05
+		},
+		"enemy_hit": {
+			"files": [
+				"res://assets/audio/sfx/enemy_hit.wav"
+			],
+			"volume": -6,
+			"pitch_var": 0.1
+		},
+		"thunder": {
+			"files": [
+				"res://assets/audio/sfx/thunder.wav"
+			],
+			"volume": -4,
+			"pitch_var": 0.05,
+			"bus": "Ambient",
+			"caption": "[trovão]"
+		},
+		"distant_scream": {
+			"files": [
+				"res://assets/audio/sfx/distant_scream.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.08,
+			"caption": "[um grito, muito longe]"
+		},
+		"wall_scratch": {
+			"files": [
+				"res://assets/audio/sfx/wall_scratch.wav"
+			],
+			"volume": -10,
+			"pitch_var": 0.15,
+			"caption": "[algo arranha dentro da parede]"
+		},
+		"heartbeat": {
+			"files": [
+				"res://assets/audio/sfx/heartbeat.wav"
+			],
+			"volume": -8,
+			"pitch_var": 0.0,
+			"bus": "UI"
+		}
+	},
+	"loops": {
+		"wind": {
+			"file": "res://assets/audio/ambient/wind.wav",
+			"volume": -9
+		},
+		"mine": {
+			"file": "res://assets/audio/ambient/mine.wav",
+			"volume": -9
+		},
+		"industrial": {
+			"file": "res://assets/audio/ambient/industrial.wav",
+			"volume": -6
+		},
+		"deep": {
+			"file": "res://assets/audio/ambient/deep.wav",
+			"volume": -7
+		},
+		"generator": {
+			"file": "res://assets/audio/ambient/generator.wav",
+			"volume": -14
+		},
+		"drill": {
+			"file": "res://assets/audio/ambient/drill.wav",
+			"volume": -10
+		},
+		"fire": {
+			"file": "res://assets/audio/ambient/fire.wav",
+			"volume": -12
+		},
+		"steam": {
+			"file": "res://assets/audio/ambient/steam.wav",
+			"volume": -22
+		},
+		"pump_hum": {
+			"file": "res://assets/audio/ambient/pump_hum.wav",
+			"volume": -16
+		},
+		"tape_hiss": {
+			"file": "res://assets/audio/ambient/tape_hiss.wav",
+			"volume": -14
+		},
+		"dread_near": {
+			"file": "res://assets/audio/ambient/dread_near.wav",
+			"volume": -10
+		},
+		"radio_static": {
+			"file": "res://assets/audio/ambient/radio_static.wav",
+			"volume": -10
+		},
+		"radio_song": {
+			"file": "res://assets/audio/ambient/radio_song.wav",
+			"volume": -8
+		},
+		"radio_speech": {
+			"file": "res://assets/audio/ambient/radio_speech.wav",
+			"volume": -8
+		}
+	},
+	"music": {
+		"base": {
+			"file": "res://assets/audio/music/base.wav",
+			"volume": -9
+		},
+		"dread_low": {
+			"file": "res://assets/audio/music/dread_low.wav",
+			"volume": -12
+		},
+		"dread_deep": {
+			"file": "res://assets/audio/music/dread_deep.wav",
+			"volume": -11
+		}
+	},
+	"ambient_oneshots": {
+		"wind": [
+			{
+				"id": "siren",
+				"chance_per_min": 0.08
+			},
+			{
+				"id": "dog_howl",
+				"chance_per_min": 0.15
+			},
+			{
+				"id": "wind_gust",
+				"chance_per_min": 1.2
+			},
+			{
+				"id": "metal_groan",
+				"chance_per_min": 0.2
+			}
+		],
+		"mine": [
+			{
+				"id": "drip",
+				"chance_per_min": 1.5
+			},
+			{
+				"id": "creak",
+				"chance_per_min": 0.8
+			},
+			{
+				"id": "metal_groan",
+				"chance_per_min": 0.25
+			},
+			{
+				"id": "distant_bang",
+				"chance_per_min": 0.12
+			},
+			{
+				"id": "wall_scratch",
+				"chance_per_min": 0.35
+			}
+		],
+		"industrial": [
+			{
+				"id": "creak",
+				"chance_per_min": 0.6
+			},
+			{
+				"id": "metal_groan",
+				"chance_per_min": 0.5
+			},
+			{
+				"id": "distant_bang",
+				"chance_per_min": 0.25
+			},
+			{
+				"id": "drip",
+				"chance_per_min": 0.8
+			},
+			{
+				"id": "wall_scratch",
+				"chance_per_min": 0.2
+			},
+			{
+				"id": "distant_scream",
+				"chance_per_min": 0.04
+			}
+		],
+		"deep": [
+			{
+				"id": "metal_groan",
+				"chance_per_min": 0.4
+			},
+			{
+				"id": "distant_bang",
+				"chance_per_min": 0.3
+			},
+			{
+				"id": "whisper",
+				"chance_per_min": 0.15
+			},
+			{
+				"id": "distant_scream",
+				"chance_per_min": 0.12
+			}
+		]
+	}
+}

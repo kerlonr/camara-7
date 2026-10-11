@@ -1,0 +1,38 @@
+{
+	"_comment": "Atmosfera visual. Tudo aqui ajusta o 'quão sombrio' o jogo é, sem tocar em código. Cores de luz ambiente por hora (minuto do dia → cor multiplicada sobre o mundo da superfície).",
+	"surface_light": [
+		{ "minute": 0, "color": "#141820" },
+		{ "minute": 300, "color": "#1a1e26" },
+		{ "minute": 390, "color": "#4a4d52" },
+		{ "minute": 540, "color": "#83837a" },
+		{ "minute": 780, "color": "#949082" },
+		{ "minute": 1020, "color": "#7a7266" },
+		{ "minute": 1140, "color": "#4a3f3a" },
+		{ "minute": 1230, "color": "#262833" },
+		{ "minute": 1320, "color": "#161a22" },
+		{ "minute": 1440, "color": "#141820" }
+	],
+	"post": {
+		"saturation": 0.78,
+		"contrast": 1.08,
+		"vignette": 0.55,
+		"grain": 0.055,
+		"tint": "#e8ece0",
+		"shadow_tint": "#cfe6f5",
+		"light_tint": "#fff0d4",
+		"surface_fog": 0.22,
+		"mine_fog": 0.08,
+		"fog_color": "#9aa39a"
+	},
+	"weather": {
+		"drizzle_chance_per_hour": 0.35,
+		"drizzle_min_minutes": 60,
+		"drizzle_max_minutes": 240,
+		"drizzle_amount": 140,
+		"storm_darkening": 0.88
+	},
+	"mine": {
+		"player_light_shadows": true,
+		"lamp_flicker_chance": 0.35
+	}
+}

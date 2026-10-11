@@ -1,0 +1,17 @@
+{
+	"_comment": "Contratos diários do terminal (3 por dia). amount = [mín, máx] escalado pela profundidade máxima. reward = valor do item × amount × money_mult; xp = fixo + por unidade. min_depth = profundidade máxima já alcançada para aparecer.",
+	"per_day": 3,
+	"days_to_complete": 2,
+	"templates": [
+		{ "id": "c_coal", "client": "Gerador do hospital de Chernobyl", "item": "coal", "amount": [10, 25], "money_mult": 2.0, "xp": 20, "min_depth": 0 },
+		{ "id": "c_stone", "client": "Equipe do aterro", "item": "stone", "amount": [30, 60], "money_mult": 3.0, "xp": 15, "min_depth": 0 },
+		{ "id": "c_copper", "client": "Oficina de rádio de Ivankiv", "item": "copper_ore", "amount": [8, 18], "money_mult": 2.0, "xp": 25, "min_depth": 1 },
+		{ "id": "c_iron", "client": "Ferraria do kolkhoz", "item": "iron_ore", "amount": [8, 18], "money_mult": 2.0, "xp": 25, "min_depth": 3 },
+		{ "id": "c_scrap", "client": "Depósito de sucata", "item": "scrap", "amount": [8, 16], "money_mult": 2.2, "xp": 20, "min_depth": 1 },
+		{ "id": "c_mech", "client": "Mecânico de Kolya", "item": "mech_parts", "amount": [2, 5], "money_mult": 2.5, "xp": 35, "min_depth": 2 },
+		{ "id": "c_elec", "client": "Instituto nº 7 (anônimo)", "item": "elec_components", "amount": [2, 4], "money_mult": 2.5, "xp": 40, "min_depth": 3 },
+		{ "id": "c_lead", "client": "Equipe de blindagem", "item": "lead_ore", "amount": [6, 14], "money_mult": 2.0, "xp": 45, "min_depth": 6 },
+		{ "id": "c_uranium", "client": "Comprador sem nome", "item": "uranium_ore", "amount": [2, 6], "money_mult": 1.8, "xp": 80, "min_depth": 12 },
+		{ "id": "c_graphite", "client": "Comissão governamental", "item": "graphite", "amount": [2, 5], "money_mult": 1.8, "xp": 100, "min_depth": 20 }
+	]
+}

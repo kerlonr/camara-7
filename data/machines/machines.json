@@ -1,0 +1,18 @@
+{
+	"_comment": "Máquinas da base. 'stat' liga a máquina ao upgrade correspondente (valor = nível). kind: generator | producer.",
+	"entries": [
+		{
+			"id": "generator", "name": "Gerador a diesel", "kind": "generator", "stat": "machine_generator",
+			"sprite": "res://assets/environment/props/generator.png", "frames": 2, "collision": [26, 10], "sound": "generator",
+			"fuel": { "item": "coal", "minutes_per_unit": 90, "capacity": 30 }
+		},
+		{
+			"id": "drill", "name": "Perfuratriz automática", "kind": "producer", "stat": "machine_drill", "needs_power": true,
+			"sprite": "res://assets/environment/props/drill_rig.png", "frames": 2, "collision": [24, 10], "sound": "drill",
+			"levels": [
+				{ "interval_minutes": 40, "buffer": 40, "output": [ { "item": "stone", "weight": 45 }, { "item": "coal", "weight": 22 }, { "item": "copper_ore", "weight": 17 }, { "item": "iron_ore", "weight": 16 } ] },
+				{ "interval_minutes": 20, "buffer": 80, "output": [ { "item": "stone", "weight": 30 }, { "item": "coal", "weight": 22 }, { "item": "copper_ore", "weight": 18 }, { "item": "iron_ore", "weight": 20 }, { "item": "lead_ore", "weight": 10 } ] }
+			]
+		}
+	]
+}

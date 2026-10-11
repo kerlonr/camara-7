@@ -1,0 +1,771 @@
+{
+	"_comment": "Diálogos ramificados. start = lista de entradas (a primeira cuja condição passar). Nó: text OU text_pool [{if, text}] (primeiro que passar; sem if = padrão aleatório). options: text, node, if, set, quest_start, quest_complete, action (shop|radio|close), end. Condições: ver scripts/core/conditions.gd.",
+	"kolya": {
+		"start": [
+			{
+				"if": [
+					"!met_kolya"
+				],
+				"node": "intro"
+			},
+			{
+				"node": "hub"
+			}
+		],
+		"nodes": {
+			"intro": {
+				"text": "Ei. Você é o mineiro novo? Do Donbass, dizem. Sou o Kolya. Trago o que ninguém mais traz e compro o que ninguém mais compra.",
+				"set": [
+					"met_kolya"
+				],
+				"options": [
+					{
+						"text": "Que lugar é este?",
+						"node": "place"
+					},
+					{
+						"text": "Vamos negociar.",
+						"action": "shop"
+					},
+					{
+						"text": "Depois.",
+						"end": true
+					}
+				]
+			},
+			"place": {
+				"text": "Posto Zaliv. Era o depósito da mina Krasnyi Yar. A usina fica a uns nove quilômetros, depois da floresta. Desde sábado ninguém fala dela em voz alta.",
+				"options": [
+					{
+						"text": "Entendi.",
+						"node": "hub"
+					}
+				]
+			},
+			"hub": {
+				"text_pool": [
+					{
+						"if": [
+							"ending_truth"
+						],
+						"text": "Ouvi no rádio de Kyiv um sobrenome: Melnyk. Acho que a Oksana conseguiu."
+					},
+					{
+						"if": [
+							"exposure>60"
+						],
+						"text": "Você está estalando feito o meu rádio. Chuveiro. Agora."
+					},
+					{
+						"if": [
+							"day==4"
+						],
+						"text": "Primeiro de maio. Em Kyiv tem desfile hoje. Aqui tem você e eu."
+					},
+					{
+						"text": "Pedra, ferro, sucata... eu compro. Não pergunto de onde veio."
+					},
+					{
+						"text": "A estrada fecha depois das oito. Soldados com máscaras. Sem conversa."
+					},
+					{
+						"text": "Não beba água da torneira. Nem eu sei por quê. Mas não beba."
+					},
+					{
+						"text": "O terminal funciona. Na maioria dos dias."
+					}
+				],
+				"options": [
+					{
+						"text": "Negociar.",
+						"action": "shop"
+					},
+					{
+						"text": "E a sua família?",
+						"node": "family",
+						"if": [
+							"!kolya_family"
+						]
+					},
+					{
+						"text": "[Missão] O rádio do Kolya",
+						"node": "radio_offer",
+						"if": [
+							"kolya_family",
+							"!quest:q_radio",
+							"!quest_done:q_radio"
+						]
+					},
+					{
+						"text": "Trouxe os componentes do rádio.",
+						"node": "radio_done",
+						"if": [
+							"quest_ready:q_radio"
+						]
+					},
+					{
+						"text": "Alguma notícia no rádio?",
+						"action": "radio",
+						"if": [
+							"quest_done:q_radio"
+						]
+					},
+					{
+						"text": "O que sabe da Oksana?",
+						"node": "about_oksana",
+						"if": [
+							"met_oksana",
+							"!kolya_on_oksana"
+						]
+					},
+					{
+						"text": "[Lábia] Uma garrafa por conta da casa, Kolya?",
+						"node": "labia_gift",
+						"if": [
+							"perk:barganha",
+							"!kolya_gift"
+						]
+					},
+					{
+						"text": "Até mais.",
+						"end": true
+					}
+				]
+			},
+			"family": {
+				"text": "Minha mulher e a Olenka moravam em Pripyat. Domingo deram duas horas para todo mundo subir nos ônibus. 'Três dias', disseram. 'Levem documentos.' A Olenka levou o urso de pelúcia. Eu fiquei. Alguém tem que ganhar dinheiro.",
+				"set": [
+					"kolya_family"
+				],
+				"options": [
+					{
+						"text": "Sinto muito.",
+						"node": "hub"
+					}
+				]
+			},
+			"radio_offer": {
+				"text": "Meu rádio morreu. Sem ele eu não sei para onde levaram os evacuados. Se achar componentes elétricos lá embaixo... três bastam. Eu pago.",
+				"options": [
+					{
+						"text": "Vou procurar.",
+						"quest_start": "q_radio",
+						"node": "hub"
+					},
+					{
+						"text": "Agora não.",
+						"node": "hub"
+					}
+				]
+			},
+			"radio_done": {
+				"text": "...Chiado. Mas funciona! Toma, é seu. O rádio fica na mesa perto do trailer, ligue quando quiser.",
+				"quest_complete": "q_radio",
+				"options": [
+					{
+						"text": "Bom proveito.",
+						"node": "hub"
+					}
+				]
+			},
+			"about_oksana": {
+				"text": "Não sai daqui desde sábado. O irmão dela estava no turno da noite. Turno C. Ninguém subiu. O Instituto diz que inundou. Ela não acredita. Eu... também não.",
+				"set": [
+					"kolya_on_oksana"
+				],
+				"options": [
+					{
+						"text": "...",
+						"node": "hub"
+					}
+				]
+			},
+			"labia_gift": {
+				"text": "Ha! Você fala como o meu cunhado. Toma, duas. E não conte para a Hanna que fui eu.",
+				"set": [
+					"kolya_gift"
+				],
+				"give": {
+					"samogon": 2
+				},
+				"options": [
+					{
+						"text": "Saúde.",
+						"node": "hub"
+					}
+				]
+			}
+		}
+	},
+	"oksana": {
+		"start": [
+			{
+				"if": [
+					"!met_oksana"
+				],
+				"node": "intro"
+			},
+			{
+				"if": [
+					"ending_truth"
+				],
+				"node": "after_truth"
+			},
+			{
+				"node": "hub"
+			}
+		],
+		"nodes": {
+			"intro": {
+				"text": "Você é o substituto. Ótimo. Oksana Melnyk, engenheira de manutenção. Ou do que sobrou da manutenção. Regra única: desça, traga minério, suba antes que o Geiger cante demais.",
+				"set": [
+					"met_oksana"
+				],
+				"options": [
+					{
+						"text": "Substituto de quem?",
+						"node": "story1"
+					},
+					{
+						"text": "Entendido.",
+						"node": "hub"
+					}
+				]
+			},
+			"hub": {
+				"text_pool": [
+					{
+						"if": [
+							"tapes>=5",
+							"!chamber_opened"
+						],
+						"text": "Cinco fitas. 2-6-0-4. Desça até o fim. Nível 30. Abra aquela porta."
+					},
+					{
+						"if": [
+							"tapes>=1"
+						],
+						"text": "Tenho ouvido as fitas à noite. A voz do Petrenko enche o trailer."
+					},
+					{
+						"text": "Se precisar de máquina, eu monto. Traga ferro e peças."
+					},
+					{
+						"text": "O gerador come carvão. Muito carvão."
+					},
+					{
+						"text": "Não confie no elevador sozinho. Nem em nada aqui embaixo."
+					}
+				],
+				"options": [
+					{
+						"text": "O que houve com a mina?",
+						"node": "story1",
+						"if": [
+							"!oksana_story"
+						]
+					},
+					{
+						"text": "[Missão] O Turno C",
+						"node": "turno_offer",
+						"if": [
+							"oksana_story",
+							"!quest:q_turno_c",
+							"!quest_done:q_turno_c"
+						]
+					},
+					{
+						"text": "Sobre as fitas...",
+						"node": "tape_talk",
+						"if": [
+							"tapes>=1"
+						]
+					},
+					{
+						"text": "[Missão] Mais fundo",
+						"node": "deep_offer",
+						"if": [
+							"quest:q_turno_c",
+							"!quest:q_deep",
+							"!quest_done:q_deep"
+						]
+					},
+					{
+						"text": "Cheguei ao nível 10.",
+						"node": "deep_done",
+						"if": [
+							"quest_ready:q_deep"
+						]
+					},
+					{
+						"text": "Como funcionam as máquinas?",
+						"node": "machines"
+					},
+					{
+						"text": "Você pode me ensinar a usar a bancada?",
+						"node": "bench",
+						"if": [
+							"!oksana_bench"
+						]
+					},
+					{
+						"text": "Até mais.",
+						"end": true
+					}
+				]
+			},
+			"story1": {
+				"text": "Na noite de 25 para 26 de abril o turno C desceu ao setor fundo. Doze homens. Meu irmão Dmytro entre eles. À 01:23 tudo tremeu e a energia caiu. De manhã, homens do Instituto lacraram o poço 2 e disseram: inundação.",
+				"set": [
+					"oksana_story"
+				],
+				"options": [
+					{
+						"text": "E você não acredita.",
+						"node": "story2"
+					}
+				]
+			},
+			"story2": {
+				"text": "Água não tranca grade por cima. O mestre Petrenko gravava tudo num gravador de bolso, mania dele. Se essas fitas existirem, estão lá embaixo.",
+				"options": [
+					{
+						"text": "...",
+						"node": "hub"
+					}
+				]
+			},
+			"turno_offer": {
+				"text": "Você desce mais do que qualquer um aqui. Se achar as fitas do Petrenko... traga para mim. Não para o Instituto. Para mim.",
+				"options": [
+					{
+						"text": "Eu prometo.",
+						"quest_start": "q_turno_c",
+						"node": "hub"
+					},
+					{
+						"text": "Não posso prometer nada.",
+						"node": "hub"
+					}
+				]
+			},
+			"tape_talk": {
+				"text_pool": [
+					{
+						"if": [
+							"tapes>=5"
+						],
+						"text": "2-6-0-4. A data. Ele deixou o código para nós. Desça até o fim. Por favor."
+					},
+					{
+						"if": [
+							"tapes>=4"
+						],
+						"text": "Uma câmara mais velha que a mina? Não existe em nenhuma planta que eu já vi. E eu vi todas."
+					},
+					{
+						"if": [
+							"tapes>=3"
+						],
+						"text": "Alguém trancou a grade por cima. Alguém. Não a água."
+					},
+					{
+						"if": [
+							"tapes>=2"
+						],
+						"text": "01:23. A hora da usina. Eles sentiram lá embaixo... e ninguém mandou subir."
+					},
+					{
+						"text": "É a voz dele. Do Petrenko. 'Veia azul'... nunca ouvi falar disso. Continue descendo."
+					}
+				],
+				"options": [
+					{
+						"text": "Vou continuar.",
+						"node": "hub"
+					}
+				]
+			},
+			"deep_offer": {
+				"text": "As fitas estão fundo. Antes, prove que aguenta: chegue ao nível 10. O setor industrial. Lá a coisa muda.",
+				"options": [
+					{
+						"text": "Combinado.",
+						"quest_start": "q_deep",
+						"node": "hub"
+					}
+				]
+			},
+			"deep_done": {
+				"text": "Nível 10 e ainda inteiro. Toma, peças que guardei para uma emergência. Isto é uma.",
+				"quest_complete": "q_deep",
+				"options": [
+					{
+						"text": "Obrigado.",
+						"node": "hub"
+					}
+				]
+			},
+			"machines": {
+				"text": "Ao lado há duas plataformas: gerador e perfuratriz. Compre no terminal, eu instalo. O gerador queima carvão — aperte E nele com carvão na mochila. A perfuratriz guarda o que extrai.",
+				"options": [
+					{
+						"text": "Entendi.",
+						"node": "hub"
+					}
+				]
+			},
+			"after_truth": {
+				"text": "Vou levar as fitas a Kyiv. Talvez ninguém escute. Mas o Dmytro tem nome de novo. Obrigada... de verdade.",
+				"options": [
+					{
+						"text": "Boa viagem, Oksana.",
+						"end": true
+					}
+				]
+			},
+			"bench": {
+				"text": "Bancada ao lado do gerador. Carvão e sucata viram dinamite; cobre e carvão viram sinalizador. Arremesse com o botão esquerdo. E não segure a dinamite.",
+				"set": [
+					"oksana_bench"
+				],
+				"options": [
+					{
+						"text": "Anotado.",
+						"node": "hub"
+					}
+				]
+			}
+		}
+	},
+	"hanna": {
+		"start": [
+			{
+				"if": [
+					"!met_hanna"
+				],
+				"node": "intro"
+			},
+			{
+				"node": "hub"
+			}
+		],
+		"nodes": {
+			"intro": {
+				"text": "Ah, mais um que desce para o buraco. Sente aqui perto do fogo, filho. Sou a Hanna, de Zaliv. Mandaram todo mundo embora. Eu fiquei. Sobrevivi aos alemães, vou sobreviver a isso que nem cheiro tem.",
+				"set": [
+					"met_hanna"
+				],
+				"options": [
+					{
+						"text": "Prazer, Hanna.",
+						"node": "hub"
+					}
+				]
+			},
+			"hub": {
+				"text_pool": [
+					{
+						"if": [
+							"quest_done:q_ivan"
+						],
+						"text": "O Ivan está em casa agora. A fita vermelha brilha à noite, sabia? Talvez seja o meu olho."
+					},
+					{
+						"text": "A floresta do outro lado ficou ruiva em poucos dias. Pinheiro não fica ruivo na primavera."
+					},
+					{
+						"text": "Lá embaixo, se alguém chamar o seu nome, não responda."
+					},
+					{
+						"text": "Os cachorros do vilarejo ficaram. Uivam à noite para donos que não voltam."
+					},
+					{
+						"text": "Toma um gole de samogon. Dizem que protege da radiação. Mentira. Mas esquenta."
+					}
+				],
+				"options": [
+					{
+						"text": "Por que a senhora não foi embora?",
+						"node": "why",
+						"if": [
+							"!hanna_ivan"
+						]
+					},
+					{
+						"text": "[Missão] O capacete de Ivan",
+						"node": "ivan_offer",
+						"if": [
+							"hanna_ivan",
+							"!quest:q_ivan",
+							"!quest_done:q_ivan"
+						]
+					},
+					{
+						"text": "Encontrei o capacete.",
+						"node": "ivan_done",
+						"if": [
+							"quest_ready:q_ivan"
+						]
+					},
+					{
+						"text": "Ouviu algo estranho?",
+						"node": "strange"
+					},
+					{
+						"text": "Até mais.",
+						"end": true
+					}
+				]
+			},
+			"why": {
+				"text": "Ir para onde? Meus mortos estão aqui. O meu Ivan está aqui — debaixo da terra, na mina velha. Desabamento de 71. Nunca acharam ele.",
+				"set": [
+					"hanna_ivan"
+				],
+				"options": [
+					{
+						"text": "...",
+						"node": "hub"
+					}
+				]
+			},
+			"ivan_offer": {
+				"text": "O capacete dele tinha uma fita vermelha que eu amarrei na lanterna, para dar sorte. Se um dia você vir isso lá embaixo, entre os níveis 8 e 14, onde a mina é velha... traz para mim?",
+				"options": [
+					{
+						"text": "Vou procurar, Hanna.",
+						"quest_start": "q_ivan",
+						"node": "hub"
+					},
+					{
+						"text": "Talvez outro dia.",
+						"node": "hub"
+					}
+				]
+			},
+			"ivan_done": {
+				"text": "É ele. É a minha fita. ...Obrigada, filho. Leva isto. E que a terra sempre te devolva.",
+				"quest_complete": "q_ivan",
+				"options": [
+					{
+						"text": "Ele está em casa agora.",
+						"node": "hub"
+					}
+				]
+			},
+			"strange": {
+				"text_pool": [
+					{
+						"if": [
+							"max_depth>=20"
+						],
+						"text": "Sonhei com doze homens sentados em volta de uma luz azul. Não estavam com medo. Isso foi o pior."
+					},
+					{
+						"if": [
+							"max_depth>=10"
+						],
+						"text": "Você está com cheiro de ferro e de outra coisa. Não desça sozinho à noite."
+					},
+					{
+						"text": "A terra lá embaixo acordou no sábado. Antes ela dormia. Agora respira."
+					}
+				],
+				"options": [
+					{
+						"text": "...",
+						"node": "hub"
+					}
+				]
+			}
+		}
+	},
+	"abramov": {
+		"start": [
+			{
+				"if": [
+					"!met_abramov"
+				],
+				"node": "intro"
+			},
+			{
+				"node": "hub"
+			}
+		],
+		"nodes": {
+			"intro": {
+				"text": "Dr. Lev Abramov, Instituto de Física Aplicada nº 7. Não precisa decorar. Estou aqui para medir coisas. O senhor vai me ajudar e o Instituto paga bem.",
+				"set": [
+					"met_abramov"
+				],
+				"options": [
+					{
+						"text": "Medir o quê?",
+						"node": "what"
+					},
+					{
+						"text": "Veremos.",
+						"node": "hub"
+					}
+				]
+			},
+			"hub": {
+				"text_pool": [
+					{
+						"if": [
+							"ending_silence"
+						],
+						"text": "O relatório foi arquivado. O senhor fez a escolha racional. Poucos fazem."
+					},
+					{
+						"if": [
+							"tapes>=3",
+							"!abramov_tapes"
+						],
+						"text": "Ouvi dizer que o senhor achou umas... gravações. Interessante."
+					},
+					{
+						"text": "Leituras interessantes hoje. 'Interessante' é um termo técnico."
+					},
+					{
+						"text": "A versão oficial é sempre a mais segura. Para todos."
+					},
+					{
+						"text": "O senhor sabe guardar segredo? Ótimo. Eu também."
+					}
+				],
+				"options": [
+					{
+						"text": "O que o Instituto quer aqui?",
+						"node": "what",
+						"if": [
+							"!abramov_what"
+						]
+					},
+					{
+						"text": "[Missão] Amostras",
+						"node": "samples_offer",
+						"if": [
+							"!quest:q_samples",
+							"!quest_done:q_samples"
+						]
+					},
+					{
+						"text": "Trouxe as amostras de urânio.",
+						"node": "samples_done",
+						"if": [
+							"quest_ready:q_samples"
+						]
+					},
+					{
+						"text": "E o Turno C?",
+						"node": "turno",
+						"if": [
+							"oksana_story"
+						]
+					},
+					{
+						"text": "As fitas...",
+						"node": "tapes",
+						"if": [
+							"tapes>=3",
+							"!abramov_tapes"
+						]
+					},
+					{
+						"text": "[Lábia] Doutor, o que tem na Câmara 7 de verdade?",
+						"node": "labia_truth",
+						"if": [
+							"perk:barganha",
+							"max_depth>=10",
+							"!abramov_truth"
+						]
+					},
+					{
+						"text": "Até mais.",
+						"end": true
+					}
+				]
+			},
+			"what": {
+				"text": "Amostras geológicas. O subsolo daqui tem... propriedades. Muito antes da usina, este lugar já interessava a Moscou. A usina só trouxe atenção indesejada.",
+				"set": [
+					"abramov_what"
+				],
+				"options": [
+					{
+						"text": "Que propriedades?",
+						"node": "hub"
+					}
+				]
+			},
+			"samples_offer": {
+				"text": "Cinco amostras de minério de urânio, das profundezas. Pago bem acima do terminal. Sem perguntas — de nenhum dos lados.",
+				"options": [
+					{
+						"text": "Fechado.",
+						"quest_start": "q_samples",
+						"node": "hub"
+					},
+					{
+						"text": "Não.",
+						"node": "hub"
+					}
+				]
+			},
+			"samples_done": {
+				"text": "Excelente. O senhor não fez perguntas. Isso vale ainda mais.",
+				"quest_complete": "q_samples",
+				"options": [
+					{
+						"text": "...",
+						"node": "hub"
+					}
+				]
+			},
+			"turno": {
+				"text": "Uma tragédia. Inundação no setor fundo. O relatório está assinado e arquivado. A senhora Melnyk precisa de descanso, não de fantasias.",
+				"options": [
+					{
+						"text": "Inundação. Claro.",
+						"node": "hub"
+					}
+				]
+			},
+			"tapes": {
+				"text": "Gravações de um homem sob estresse extremo, sem oxigênio, no escuro. Não são confiáveis. Se encontrar a última... me procure antes de procurar a senhora Melnyk. Pelo bem dela.",
+				"set": [
+					"abramov_tapes"
+				],
+				"options": [
+					{
+						"text": "Vou pensar.",
+						"node": "hub"
+					}
+				]
+			},
+			"labia_truth": {
+				"text": "...Você é persistente. Há um mineral lá embaixo que mede o tempo de um jeito errado. Os relógios perto dele param. Moscou quer saber por quê. Eu também.",
+				"set": [
+					"abramov_truth"
+				],
+				"options": [
+					{
+						"text": "E o Turno C?",
+						"node": "labia_turno"
+					}
+				]
+			},
+			"labia_turno": {
+				"text": "O Turno C chegou mais perto do que qualquer um. Se eles estão vivos, não estão mais no nosso relógio. Isso fica entre nós.",
+				"options": [
+					{
+						"text": "...",
+						"node": "hub"
+					}
+				]
+			}
+		}
+	}
+}

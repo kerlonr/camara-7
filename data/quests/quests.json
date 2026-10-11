@@ -1,0 +1,112 @@
+{
+	"_comment": "Missões. objectives: deliver {item, amount} (consumido ao entregar) | have {item, amount} | reach_depth {depth} | tapes {count} | flag {flag, text}. reward: money, items {}, flags []. main = missão principal (sempre rastreada).",
+	"entries": [
+		{
+			"id": "q_turno_c",
+			"title": "O Turno C",
+			"giver": "oksana",
+			"main": true,
+			"desc": "Encontre as cinco fitas do mestre Petrenko nas profundezas e descubra o que aconteceu com o Turno C.",
+			"objectives": [
+				{
+					"type": "tapes",
+					"count": 5,
+					"text": "Fitas do Petrenko"
+				},
+				{
+					"type": "flag",
+					"flag": "chamber_opened",
+					"text": "Abrir a Câmara 7 (nível 30)"
+				}
+			],
+			"reward": {
+				"xp": 300
+			}
+		},
+		{
+			"id": "q_deep",
+			"title": "Mais fundo",
+			"giver": "oksana",
+			"desc": "Chegue ao nível 10, o Setor Industrial.",
+			"objectives": [
+				{
+					"type": "reach_depth",
+					"depth": 10,
+					"text": "Alcançar o nível 10"
+				}
+			],
+			"reward": {
+				"money": 300,
+				"items": {
+					"mech_parts": 4,
+					"potassium_iodide": 2
+				},
+				"xp": 60
+			}
+		},
+		{
+			"id": "q_radio",
+			"title": "O rádio do Kolya",
+			"giver": "kolya",
+			"desc": "Traga componentes elétricos para consertar o rádio do Kolya.",
+			"objectives": [
+				{
+					"type": "deliver",
+					"item": "elec_components",
+					"amount": 3,
+					"text": "Componentes elétricos"
+				}
+			],
+			"reward": {
+				"money": 150,
+				"flags": [
+					"radio_fixed"
+				],
+				"xp": 40
+			}
+		},
+		{
+			"id": "q_ivan",
+			"title": "O capacete de Ivan",
+			"giver": "hanna",
+			"desc": "Encontre o capacete do marido de Hanna nas galerias velhas (níveis 8 a 14).",
+			"objectives": [
+				{
+					"type": "deliver",
+					"item": "ivan_helmet",
+					"amount": 1,
+					"text": "Capacete com fita vermelha"
+				}
+			],
+			"reward": {
+				"money": 300,
+				"items": {
+					"samogon": 2,
+					"potassium_iodide": 2
+				},
+				"flags": [
+					"hanna_blessing"
+				],
+				"xp": 80
+			}
+		},
+		{
+			"id": "q_samples",
+			"title": "Amostras para o Instituto",
+			"giver": "abramov",
+			"desc": "Entregue cinco amostras de minério de urânio ao Dr. Abramov.",
+			"objectives": [
+				{
+					"type": "deliver",
+					"item": "uranium_ore",
+					"amount": 5,
+					"text": "Minério de urânio"
+				}
+			],
+			"reward": {
+				"money": 1200,
+				"xp": 100
+			}
+		}
+	]
+}

@@ -1,0 +1,14 @@
+# Godot
+.godot/
+*.tmp
+/build/
+
+# builds (vão nos releases do GitHub, não no código)
+/dist/
+installer/build/
+
+# testes e ferramentas
+tests/tmp/
+__pycache__/
+*.pyc
+update_autotest.txt
