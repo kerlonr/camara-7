@@ -1,6 +1,6 @@
-# Gera dist\Camara7-<versão>.msi a partir de dist\Camara 7.exe + dist\Camara 7.pck (rode "Gerar EXE.bat" antes).
+﻿# Gera dist\Camara7-<versão>.msi a partir de dist\Camara 7.exe + dist\Camara 7.pck (rode "Gerar EXE.bat" antes).
 # Requisitos: Python + Pillow, WiX 3 em C:\Users\mitok\Tools\wix3 (ou $env:WIX3)
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"   # cada passo confere $LASTEXITCODE
 $root = Split-Path -Parent $PSScriptRoot
 $wix = if ($env:WIX3) { $env:WIX3 } else { "C:\Users\mitok\Tools\wix3" }
 $version = (Get-Content "$root\data\config\game.json" -Raw -Encoding UTF8 | ConvertFrom-Json).version

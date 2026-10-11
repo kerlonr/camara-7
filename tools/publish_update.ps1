@@ -1,4 +1,4 @@
-# Publica uma atualização do Câmara 7 no GitHub (os jogos instalados baixam sozinhos).
+﻿# Publica uma atualização do Câmara 7 no GitHub (os jogos instalados baixam sozinhos).
 #
 #   powershell -File tools\publish_update.ps1                         # sobe a versão (0.6.0 -> 0.6.1) e publica
 #   powershell -File tools\publish_update.ps1 -Version 0.7.0 -Notes "Novos inimigos"
@@ -13,7 +13,9 @@ param(
     [switch]$Installer,
     [switch]$SkipTests
 )
-$ErrorActionPreference = "Stop"
+# "Continue": o Godot escreve avisos no stderr e o PowerShell 5.1 trataria isso como erro fatal.
+# Cada passo confere o próprio resultado e para com throw se algo falhar.
+$ErrorActionPreference = "Continue"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
 $godot = "C:\Users\mitok\Tools\Godot\Godot_v4.7.2-stable_win64_console.exe"
@@ -59,12 +61,15 @@ if (-not $SkipTests) {
 Step "Exportando"
 New-Item -ItemType Directory -Force "dist" | Out-Null
 $assets = @()
+Remove-Item "dist\Camara7.pck", "dist\update.json", "dist\Camara 7.exe", "dist\Camara 7.pck", "dist\Camara7-$Version.msi" -ErrorAction SilentlyContinue
 & $godot --headless --path . --export-pack "Windows Desktop" "dist\Camara7.pck" *> $null
 if (-not (Test-Path "dist\Camara7.pck")) { throw "Export do .pck falhou." }
 $assets += "dist\Camara7.pck"
 if ($Installer) {
     & $godot --headless --path . --export-release "Windows Desktop" "dist\Camara 7.exe" *> $null
+    if (-not (Test-Path "dist\Camara 7.exe")) { throw "Export do .exe falhou." }
     & "$PSScriptRoot\..\installer\build_msi.ps1"
+    if (-not (Test-Path "dist\Camara7-$Version.msi")) { throw "Instalador falhou." }
     $assets += "dist\Camara7-$Version.msi"
 }
 $sha = (Get-FileHash "dist\Camara7.pck" -Algorithm SHA256).Hash.ToLower()
@@ -79,6 +84,7 @@ git add -A
 git commit -m "Versão $Version`: $Notes" | Out-Null
 git tag -a "v$Version" -m "Câmara 7 v$Version"
 git push origin HEAD --follow-tags
+if ($LASTEXITCODE -ne 0) { throw "git push falhou." }
 $body = "$Notes`n`n---`nQuem já tem o jogo instalado recebe esta versão sozinho ao abrir o jogo.`nPrimeira instalação: baixe o arquivo .msi do release mais recente que tiver um."
 gh release create "v$Version" @assets --repo $repo --title "Câmara 7 v$Version" --notes $body
 if ($LASTEXITCODE -ne 0) { throw "gh release falhou." }
